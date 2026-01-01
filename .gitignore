@@ -1,0 +1,23 @@
+# Cache files
+__pycache__/
+*.pyc
+*.pkl
+.streamlit/
+
+# Windows reserved names
+nul
+.claude/
+
+# Local data (not needed in cloud)
+universe_cache.csv
+price_cache.pkl
+equity_curve.csv
+metrics.csv
+positions_history.csv
+
+# Logs
+*.log
+
+# Don't ignore these - needed for tracking
+# signals.json
+# track_record.json

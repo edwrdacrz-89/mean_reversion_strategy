@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mean Reversion Strategy - Technical Details</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max_width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #111;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .container {
+            background-color: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 25px 0;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #444;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+            font-size: 0.9em;
+            color: #e83e8c;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .columns {
+            display: flex;
+            gap: 40px;
+        }
+        .column {
+            flex: 1;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .performance-table th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        .performance-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mean Reversion Strategy: Technical Details</h1>
+        <p><em>Complete documentation and performance report.</em></p>
+
+        <h2>Strategy Overview</h2>
+        <p>This strategy capitalizes on short-term price corrections in high-quality, systemically important stocks ("The Power Universe"). It is fundamentally designed to exploit behavioral inefficiencies and psychological overreactions in the market.</p>
+        <p>Human market participants often over-correct to negative news, driven by fear and uncertainty. This strategy systematically identifies these moments of peak emotional selling and positions itself to capture the inevitable reversion when rationality returns.</p>
+
+        <h2>Execution Rules</h2>
+        <div class="columns">
+            <div class="column">
+                <h3>1. Timing</h3>
+                <ul>
+                    <li><strong>Signal Generation:</strong> 3:45 PM ET</li>
+                    <li><strong>Order Type:</strong> Market-On-Close (MOC)</li>
+                    <li><strong>Holding Period:</strong> 1 day (close-to-close)</li>
+                </ul>
+
+                <h3>2. Daily Workflow</h3>
+                <ol>
+                    <li>SELL all existing positions (MOC)</li>
+                    <li>Calculate total portfolio value from sales</li>
+                    <li>BUY new signals with equal weight (MOC)</li>
+                </ol>
+                <p><em>Positions are held for exactly ONE day.</em></p>
+            </div>
+            <div class="column">
+                <h3>3. Position Sizing</h3>
+                <ul>
+                    <li><strong>Max Positions:</strong> 3</li>
+                    <li><strong>Weight per Position:</strong> ~33.33%</li>
+                    <li><strong>If fewer signals:</strong> Remainder stays in cash</li>
+                </ul>
+                <p><em>Example: 2 signals = 66.67% invested, 33.33% cash.</em></p>
+
+                <h3>4. Signal Criteria</h3>
+                <ul>
+                    <li><strong>Universe:</strong> S&P 500 subset (Power Universe)</li>
+                    <li><strong>Min Consistency (C):</strong> 55%</li>
+                    <li><strong>Min Drop:</strong> 0.20% from previous close</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Scoring System</h2>
+
+        <h3>E Score (Elasticity)</h3>
+        <p><strong>What generally happens when this stock drops?</strong></p>
+        <p>This score measures the <em>strength</em> of a stock's historical recovery. A high Elasticity Score means that when the stock has dipped in the past, it has typically rebounded strongly the next day.</p>
+        <code>E = Sum of next-day returns after all down days (over 378 trading days)</code>
+        <ul>
+            <li>Higher E = Stock tends to bounce more aggressively after drops</li>
+        </ul>
+
+        <h3>C Score (Consistency)</h3>
+        <p><strong>How often does this stock recover?</strong></p>
+        <p>This measures the <em>probability</em> of a rebound. We require a minimum 55% historical win rate. This ensures we are not just chasing volatile stocks, but ones that reliably revert to the mean.</p>
+        <code>C = (Number of bounces after down days) / (Total down days)</code>
+        <ul>
+            <li>C of 0.55 means stock goes up 55% of the time after a down day</li>
+        </ul>
+
+        <h3>Final Score</h3>
+        <code>Final Score = E x C</code>
+        <ul>
+            <li>Combines magnitude (E) with reliability (C)</li>
+            <li>Higher score = Better mean reversion candidate</li>
+        </ul>
+
+        <h2>Price Drop Calculation</h2>
+        <p><strong>IMPORTANT:</strong> Drop is calculated from previous day's close, NOT today's open.</p>
+        <code>Drop % = (Previous Close - Current Price) / Previous Close x 100</code>
+        <p>This allows MOC orders to be placed at 3:45 PM with a known baseline.</p>
+
+        <h2>Signal Selection Process</h2>
+        <ol>
+            <li>Calculate E and C scores for all stocks in universe</li>
+            <li>Filter: Keep only stocks with C >= 55%</li>
+            <li>Rank by Final Score (E x C)</li>
+            <li>Take top 6 candidates</li>
+            <li>Filter: Keep only stocks that dropped >= 0.20% today</li>
+            <li>Rank remaining by drop percentage (deepest first)</li>
+            <li>Select top 3 as final signals</li>
+        </ol>
+
+        <h2>Strategy Parameters</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ROLLING_WINDOW</td>
+                    <td>378</td>
+                    <td>Days of history for E/C calculation</td>
+                </tr>
+                <tr>
+                    <td>MIN_CONSISTENCY</td>
+                    <td>0.55</td>
+                    <td>Minimum bounce rate after down days</td>
+                </tr>
+                <tr>
+                    <td>TOP_CANDIDATES</td>
+                    <td>6</td>
+                    <td>Number of top scorers to consider</td>
+                </tr>
+                <tr>
+                    <td>MAX_POSITIONS</td>
+                    <td>3</td>
+                    <td>Maximum simultaneous positions</td>
+                </tr>
+                <tr>
+                    <td>MIN_DROP_PCT</td>
+                    <td>0.0020</td>
+                    <td>Minimum drop to trigger signal</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Universe Selection</h2>
+        <p>We focus exclusively on industries with deep structural ties to government spending and critical infrastructure. These companies are less likely to fail within the larger socio-economic-political system they exist in because of inextricable links to national stability. This ensures they benefit from consistent institutional capital flows and are effectively insulated from total collapse.</p>
+        <p><strong>Key Sectors:</strong> Defense & Aerospace, Financials, Semiconductors, Infrastructure.</p>
+
+        <h2>Important Warnings</h2>
+        <div class="warning-box">
+            <strong>DO NOT:</strong>
+            <ul>
+                <li>Modify strategy parameters without backtesting</li>
+                <li>Record signals at times other than 3:45 PM ET</li>
+                <li>Manually edit track_record.json</li>
+                <li>Execute orders other than MOC</li>
+                <li>Hold positions longer than 1 day</li>
+            </ul>
+        </div>
+
+        <h2>Historical Performance (2015-2025)</h2>
+        <p>Backtest conducted from Jan 1, 2015 to Nov 28, 2025 on historical S&P 500 constituents.<br>
+        Results exclude commissions but include 0.05% slippage per trade.</p>
+
+        <table class="performance-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Return</td>
+                    <td>4,048%</td>
+                </tr>
+                <tr>
+                    <td>CAGR</td>
+                    <td>40.8%</td>
+                </tr>
+                <tr>
+                    <td>Sharpe Ratio</td>
+                    <td>1.94</td>
+                </tr>
+                <tr>
+                    <td>Win Rate</td>
+                    <td>57.6%</td>
+                </tr>
+                <tr>
+                    <td>Max Drawdown</td>
+                    <td>-24.9%</td>
+                </tr>
+                <tr>
+                    <td>Avg Trades/Day</td>
+                    <td>1.86</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

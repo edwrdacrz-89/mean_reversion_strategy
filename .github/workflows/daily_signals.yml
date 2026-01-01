@@ -1,0 +1,35 @@
+name: Daily Signal Generation
+
+on:
+  schedule:
+    # Run at 3:45 PM ET (20:45 UTC) on weekdays
+    - cron: '45 20 * * 1-5'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  generate-signals:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas numpy yfinance
+
+      - name: Generate signals
+        run: python cloud_signal_generator.py
+
+      - name: Commit and push signals
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add signals.json track_record.json
+          git diff --staged --quiet || git commit -m "Daily signals $(date +'%Y-%m-%d')"
+          git push
