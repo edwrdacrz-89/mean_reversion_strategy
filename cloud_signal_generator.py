@@ -39,10 +39,11 @@ EXECUTION RULES (GUARDRAILS):
    - Uses previous day's close as baseline (not today's open)
    - This allows MOC orders to be placed at 3:45 PM
 
-6. RANKING:
-   - Calculate E*C score for each stock (elasticity * consistency)
-   - Take top 6 candidates by score
-   - Filter by minimum drop requirement
+6. RANKING (OPTIMIZED FLOW):
+   - FIRST: Check which stocks dropped >= 0.20% today (fast batch check)
+   - Only download historical data for dropped stocks (saves time)
+   - Calculate E*C scores only for dropped stocks
+   - Filter by C >= 55%, take top 6 by score
    - Select top 3 by drop percentage (deepest drops first)
 
 TRACK RECORD:
@@ -196,25 +197,37 @@ def calculate_scores(close_prices):
 
     return pd.DataFrame(scores)
 
-def get_intraday_info(tickers):
-    """Get today's prices and compare to previous close."""
-    data = {}
-    for ticker in tickers:
-        try:
-            stock = yf.Ticker(ticker)
-            hist = stock.history(period='5d')
-            if len(hist) >= 2:
-                prev_close = hist['Close'].iloc[-2]
-                current = hist['Close'].iloc[-1]
+def get_drops_batch(tickers):
+    """Get today's drops for all tickers in one batch download."""
+    try:
+        # Download last 5 days for all tickers at once (much faster than individual calls)
+        data = yf.download(tickers, period='5d', auto_adjust=True, progress=False)
+        if data.empty:
+            return {}
+
+        # Handle single vs multi-ticker response
+        if isinstance(data.columns, pd.MultiIndex):
+            close = data['Close']
+        else:
+            close = data[['Close']]
+            close.columns = [tickers[0]] if isinstance(tickers, list) and len(tickers) == 1 else [tickers]
+
+        drops = {}
+        for ticker in close.columns:
+            prices = close[ticker].dropna()
+            if len(prices) >= 2:
+                prev_close = prices.iloc[-2]
+                current = prices.iloc[-1]
                 drop = (prev_close - current) / prev_close if prev_close > 0 else 0
-                data[ticker] = {
+                drops[ticker] = {
                     'prev_close': float(prev_close),
                     'current': float(current),
                     'drop_pct': float(drop * 100)
                 }
-        except:
-            pass
-    return data
+        return drops
+    except Exception as e:
+        print(f"Error getting drops: {e}")
+        return {}
 
 def generate_signals(scores_df, intraday_data):
     """Generate trading signals."""
@@ -382,23 +395,32 @@ def main():
 
     print(f"Universe: {len(UNIVERSE)} stocks")
 
-    # Get prices
-    print("Downloading prices...")
-    prices = get_prices(UNIVERSE)
-    close = get_close_prices(prices)
+    # STEP 1: Check drops FIRST (fast - single batch download)
+    print("Checking today's drops...")
+    all_drops = get_drops_batch(UNIVERSE)
+    print(f"Got prices for {len(all_drops)} stocks")
 
-    # Calculate scores
-    print("Calculating scores...")
-    scores = calculate_scores(close)
-    print(f"Scores for {len(scores)} stocks")
+    # Filter to stocks that are actually down
+    down_stocks = {t: d for t, d in all_drops.items() if d['drop_pct'] >= MIN_DROP_PCT * 100}
+    print(f"Stocks down >= {MIN_DROP_PCT*100:.2f}%: {len(down_stocks)}")
 
-    # Get intraday for top candidates
-    top_tickers = scores[scores['C'] >= MIN_CONSISTENCY].nlargest(TOP_CANDIDATES * 2, 'score')['ticker'].tolist()
-    print(f"Getting intraday for {len(top_tickers)} candidates...")
-    intraday = get_intraday_info(top_tickers)
+    if not down_stocks:
+        print("\nNO SIGNALS - No stocks dropped enough today")
+        signals = []
+    else:
+        # STEP 2: Only calculate scores for stocks that dropped
+        down_tickers = list(down_stocks.keys())
+        print(f"Downloading historical data for {len(down_tickers)} dropped stocks...")
+        prices = get_prices(down_tickers)
+        close = get_close_prices(prices)
 
-    # Generate signals
-    signals = generate_signals(scores, intraday)
+        # Calculate scores only for dropped stocks
+        print("Calculating scores...")
+        scores = calculate_scores(close)
+        print(f"Scores for {len(scores)} stocks")
+
+        # Generate signals
+        signals = generate_signals(scores, down_stocks)
 
     if signals:
         print(f"\nSIGNALS ({len(signals)}):")

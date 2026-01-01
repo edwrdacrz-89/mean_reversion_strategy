@@ -467,8 +467,39 @@ def calculate_scores(close_prices):
     return pd.DataFrame(scores)
 
 @st.cache_data(ttl=60)
+def get_drops_batch(tickers: list):
+    """Get today's drops for all tickers in one batch download (fast)."""
+    try:
+        data = yf.download(tickers, period='5d', auto_adjust=True, progress=False)
+        if data.empty:
+            return {}
+
+        if isinstance(data.columns, pd.MultiIndex):
+            close = data['Close']
+        else:
+            close = data[['Close']]
+            close.columns = [tickers[0]] if len(tickers) == 1 else tickers
+
+        drops = {}
+        for ticker in close.columns:
+            prices = close[ticker].dropna()
+            if len(prices) >= 2:
+                prev_close = prices.iloc[-2]
+                current = prices.iloc[-1]
+                drop = (prev_close - current) / prev_close if prev_close > 0 else 0
+                drops[ticker] = {
+                    'prev_close': float(prev_close),
+                    'current': float(current),
+                    'drop_pct': float(drop * 100),
+                    'name': ticker  # Name lookup is slow, skip for batch
+                }
+        return drops
+    except:
+        return {}
+
+@st.cache_data(ttl=60)
 def get_intraday_info(tickers: list):
-    """Get current price vs previous close for each ticker."""
+    """Get current price vs previous close for each ticker (with names)."""
     data = {}
     for ticker in tickers:
         try:
@@ -533,28 +564,27 @@ def generate_todays_signals(scores_df, intraday_data, sp500_members):
 # =============================================================================
 
 def fetch_from_github(url):
-    """Fetch JSON data from GitHub raw URL."""
+    """Fetch JSON data from GitHub raw URL. Returns (data, error_message)."""
     import requests
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
-            return response.json()
-    except:
-        pass
-    return None
+            return response.json(), None
+        else:
+            return None, f"GitHub returned status {response.status_code}"
+    except requests.exceptions.Timeout:
+        return None, "GitHub request timed out"
+    except requests.exceptions.ConnectionError:
+        return None, "Could not connect to GitHub"
+    except Exception as e:
+        return None, f"GitHub fetch error: {str(e)}"
 
 def load_track_record():
-    """Load track record from GitHub (preferred) or local file."""
-    # Try GitHub first for latest data
-    github_data = fetch_from_github(GITHUB_TRACK_RECORD_URL)
-    if github_data:
-        return github_data
-
-    # Fall back to local file
-    if TRACK_RECORD_FILE.exists():
-        with open(TRACK_RECORD_FILE, 'r') as f:
-            return json.load(f)
-    return {'entries': [], 'start_date': None}
+    """Load track record from GitHub only."""
+    data, error = fetch_from_github(GITHUB_TRACK_RECORD_URL)
+    if data:
+        return data, None
+    return {'entries': [], 'start_date': None}, error
 
 def save_track_record(record):
     """Save track record to file."""
@@ -563,7 +593,7 @@ def save_track_record(record):
 
 def record_todays_signals(signals):
     """Record today's signals to track record."""
-    record = load_track_record()
+    record, _ = load_track_record()  # Ignore error for local recording
     today = datetime.now().strftime('%Y-%m-%d')
 
     # Don't duplicate
@@ -919,16 +949,16 @@ def show_signals_page():
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        # Check if we have saved signals and their date (try GitHub first)
+        # Check if we have saved signals from GitHub
         saved_signals_date = None
-        saved_data = fetch_from_github(GITHUB_SIGNALS_URL)
-        if not saved_data:
-            signals_file = Path('signals.json')
-            if signals_file.exists():
-                with open(signals_file, 'r') as f:
-                    saved_data = json.load(f)
+        github_error = None
+        saved_data, github_error = fetch_from_github(GITHUB_SIGNALS_URL)
         if saved_data:
             saved_signals_date = saved_data.get('date')
+
+        # Show GitHub error if any
+        if github_error:
+            st.error(f"⚠️ Cannot fetch from GitHub: {github_error}")
 
         today_str = now_et.strftime('%Y-%m-%d')
         is_trading_day = now_et.weekday() < 5  # Monday-Friday
@@ -936,14 +966,25 @@ def show_signals_page():
         # We'll determine the header after loading price data to know the actual date
         header_placeholder = st.empty()
 
-        with st.spinner("Calculating scores..."):
-            prices = get_prices(universe)
-            close = get_close_prices(prices)
-            scores = calculate_scores(close)
+        # OPTIMIZED: Check drops FIRST, then only calculate scores for dropped stocks
+        with st.spinner("Checking today's drops..."):
+            all_drops = get_drops_batch(universe)
 
-        if scores.empty:
-            st.error("Could not calculate scores")
-            return
+        # Filter to stocks that dropped enough
+        down_stocks = {t: d for t, d in all_drops.items() if d['drop_pct'] >= MIN_DROP_PCT * 100}
+
+        if not down_stocks:
+            scores = pd.DataFrame()
+            close = None
+            data_date_str = None
+            data_date_display = None
+        else:
+            # Only download historical data for dropped stocks
+            down_tickers = list(down_stocks.keys())
+            with st.spinner(f"Calculating scores for {len(down_tickers)} dropped stocks..."):
+                prices = get_prices(down_tickers)
+                close = get_close_prices(prices)
+                scores = calculate_scores(close)
 
         # Now determine the actual data date and show appropriate header
         data_date_str = None
@@ -986,13 +1027,9 @@ def show_signals_page():
             <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Today's Signals</p>
             """, unsafe_allow_html=True)
 
-        # Get top candidates for intraday check
-        top_tickers = scores[scores['C'] >= MIN_CONSISTENCY].nlargest(TOP_CANDIDATES * 2, 'score')['ticker'].tolist()
-
-        with st.spinner("Checking intraday prices..."):
-            intraday = get_intraday_info(top_tickers)
-
-        signals = generate_todays_signals(scores, intraday, sp500)
+        # Use the already-fetched drop data (no need to fetch again)
+        # down_stocks already has all stocks that dropped >= MIN_DROP_PCT
+        signals = generate_todays_signals(scores, down_stocks, sp500) if not scores.empty else []
 
         # Display signals
         if signals:
@@ -1054,10 +1091,19 @@ def show_signals_page():
                 """, unsafe_allow_html=True)
 
         else:
-            st.markdown("""
+            # Show why there are no signals
+            if not down_stocks:
+                reason = f"No stocks dropped ≥ {MIN_DROP_PCT*100:.2f}% today"
+            elif scores.empty:
+                reason = "No dropped stocks passed scoring filter"
+            else:
+                reason = "No stocks met all criteria"
+
+            st.markdown(f"""
             <div class="cash-box animate-in" style="padding:16px;">
                 <p style="margin:0; color:rgba(255,255,255,0.5); font-size:14px;">No Active Positions</p>
                 <p style="margin:8px 0 0 0; font-size:28px; font-weight:600; color:rgba(255,255,255,0.4);">100% Cash</p>
+                <p style="margin:8px 0 0 0; color:rgba(255,255,255,0.3); font-size:12px;">{reason}</p>
             </div>
             """, unsafe_allow_html=True)
 
@@ -1143,7 +1189,10 @@ def show_signals_page():
         <p style="font-size: 22px; font-weight: 600; color: #fff; margin: 0 0 10px 0;">Trading History</p>
         """, unsafe_allow_html=True)
 
-        record = load_track_record()
+        record, track_error = load_track_record()
+
+        if track_error:
+            st.error(f"⚠️ Cannot fetch track record: {track_error}")
 
         if not record['entries']:
             st.markdown("""
