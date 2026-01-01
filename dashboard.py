@@ -49,6 +49,11 @@ HOLDING_PERIOD = 1  # Days (close-to-close)
 
 TRACK_RECORD_FILE = Path("track_record.json")
 
+# GitHub raw URLs for fetching latest data
+GITHUB_REPO = "edwrdacrz-89/mean_reversion_strategy"
+GITHUB_TRACK_RECORD_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/master/track_record.json"
+GITHUB_SIGNALS_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/master/signals.json"
+
 # =============================================================================
 # PAGE CONFIG
 # =============================================================================
@@ -335,11 +340,36 @@ st.markdown("""
 
 @st.cache_data(ttl=300)
 def load_universe():
-    """Load trading universe."""
-    cache_file = Path('universe_cache.csv')
-    if cache_file.exists():
-        return pd.read_csv(cache_file)['ticker'].tolist()
-    return []
+    """Load trading universe - same as cloud_signal_generator.py (125 stocks)."""
+    return [
+        # Diagnostics & Research
+        'A', 'DGX', 'DHR', 'IDXX', 'ILMN', 'IQV', 'LH', 'MTD', 'TMO', 'WAT',
+        # IT Services
+        'ACN', 'BR', 'CTSH', 'DXC', 'FIS', 'IBM', 'IT', 'JKHY', 'LDOS', 'UIS', 'XRX',
+        # Software
+        'ADBE', 'ADP', 'ADSK', 'AKAM', 'CDNS', 'CRM', 'FFIV', 'FTNT', 'INTU', 'MSFT',
+        'NTAP', 'ORCL', 'PAYX', 'PTC', 'ROP', 'S', 'SNPS', 'TDC', 'VRSN',
+        # Semiconductors
+        'ADI', 'AMD', 'AMAT', 'AVGO', 'INTC', 'IPGP', 'KLAC', 'LRCX', 'MCHP', 'MU',
+        'NVDA', 'QCOM', 'QRVO', 'SWKS', 'TER', 'TXN',
+        # Electronic Components
+        'APH', 'GLW', 'JBL', 'SANM', 'TEL',
+        # Insurance P&C
+        'AIZ', 'ALL', 'CB', 'CINF', 'HIG', 'L', 'PGR', 'TRV',
+        # Banks
+        'BAC', 'BK', 'C', 'JPM', 'WFC',
+        # Asset Management
+        'AMG', 'AMP', 'BEN', 'BLK', 'IVZ', 'NTRS', 'PFG', 'PX', 'RJF', 'STT', 'TROW',
+        # Credit Services
+        'AXP', 'COF', 'MA', 'NAVI', 'PYPL', 'SLM', 'SYF', 'V', 'WU',
+        # Aerospace & Defense
+        'BA', 'GD', 'GE', 'HII', 'LMT', 'NOC', 'TDG', 'TXT',
+        # Specialty Industrial Machinery
+        'AME', 'AOS', 'CMI', 'CR', 'DOV', 'EMR', 'ETN', 'FLS', 'IR', 'ITT', 'ITW',
+        'PH', 'PNR', 'ROK', 'XYL',
+        # Building & Construction
+        'DHI', 'JCI', 'KBH', 'LEN', 'LPX', 'MAS', 'PHM',
+    ]
 
 @st.cache_data(ttl=300)
 def load_sp500_members():
@@ -502,8 +532,25 @@ def generate_todays_signals(scores_df, intraday_data, sp500_members):
 # TRACK RECORD
 # =============================================================================
 
+def fetch_from_github(url):
+    """Fetch JSON data from GitHub raw URL."""
+    import requests
+    try:
+        response = requests.get(url, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+    except:
+        pass
+    return None
+
 def load_track_record():
-    """Load track record from file."""
+    """Load track record from GitHub (preferred) or local file."""
+    # Try GitHub first for latest data
+    github_data = fetch_from_github(GITHUB_TRACK_RECORD_URL)
+    if github_data:
+        return github_data
+
+    # Fall back to local file
     if TRACK_RECORD_FILE.exists():
         with open(TRACK_RECORD_FILE, 'r') as f:
             return json.load(f)
@@ -872,10 +919,22 @@ def show_signals_page():
     col1, col2 = st.columns([1, 1])
 
     with col1:
-        st.markdown("""
-        <p style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Positions</p>
-        <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Today's Signals</p>
-        """, unsafe_allow_html=True)
+        # Check if we have saved signals and their date (try GitHub first)
+        saved_signals_date = None
+        saved_data = fetch_from_github(GITHUB_SIGNALS_URL)
+        if not saved_data:
+            signals_file = Path('signals.json')
+            if signals_file.exists():
+                with open(signals_file, 'r') as f:
+                    saved_data = json.load(f)
+        if saved_data:
+            saved_signals_date = saved_data.get('date')
+
+        today_str = now_et.strftime('%Y-%m-%d')
+        is_trading_day = now_et.weekday() < 5  # Monday-Friday
+
+        # We'll determine the header after loading price data to know the actual date
+        header_placeholder = st.empty()
 
         with st.spinner("Calculating scores..."):
             prices = get_prices(universe)
@@ -885,6 +944,47 @@ def show_signals_page():
         if scores.empty:
             st.error("Could not calculate scores")
             return
+
+        # Now determine the actual data date and show appropriate header
+        data_date_str = None
+        if close is not None and not close.empty:
+            last_data_date = close.index[-1]
+            data_date_str = last_data_date.strftime('%Y-%m-%d')
+            data_date_display = last_data_date.strftime('%b %d, %Y')
+
+        # Determine what to show in the header
+        if saved_signals_date and saved_signals_date != today_str:
+            # Signals are from a previous date
+            from datetime import datetime as dt
+            sig_date = dt.strptime(saved_signals_date, '%Y-%m-%d')
+            date_display = sig_date.strftime('%b %d, %Y')
+            header_placeholder.markdown(f"""
+            <p style="font-size: 11px; font-weight: 500; color: rgba(255,170,0,0.8); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">⚠️ Signals from {date_display}</p>
+            <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Recorded Signals</p>
+            """, unsafe_allow_html=True)
+        elif data_date_str and data_date_str != today_str:
+            # Data is from a previous trading day
+            header_placeholder.markdown(f"""
+            <p style="font-size: 11px; font-weight: 500; color: rgba(255,170,0,0.8); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">⚠️ Data from {data_date_display} (last trading day)</p>
+            <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Live Preview</p>
+            """, unsafe_allow_html=True)
+        elif not is_trading_day:
+            # Weekend - market closed
+            header_placeholder.markdown(f"""
+            <p style="font-size: 11px; font-weight: 500; color: rgba(255,170,0,0.8); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">⚠️ Market Closed (Weekend)</p>
+            <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Live Preview</p>
+            """, unsafe_allow_html=True)
+        elif not market_is_open:
+            # Weekday but outside market hours
+            header_placeholder.markdown(f"""
+            <p style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Market Closed</p>
+            <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Live Preview</p>
+            """, unsafe_allow_html=True)
+        else:
+            header_placeholder.markdown("""
+            <p style="font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Positions</p>
+            <p style="font-size: 26px; font-weight: 600; color: #fff; margin: 0 0 12px 0;">Today's Signals</p>
+            """, unsafe_allow_html=True)
 
         # Get top candidates for intraday check
         top_tickers = scores[scores['C'] >= MIN_CONSISTENCY].nlargest(TOP_CANDIDATES * 2, 'score')['ticker'].tolist()
