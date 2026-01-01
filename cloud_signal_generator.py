@@ -265,26 +265,37 @@ def load_track_record():
     path = Path('track_record.json')
     if path.exists():
         with open(path, 'r') as f:
-            return json.load(f)
-    return {'entries': [], 'start_date': None, 'performance': {'total_trades': 0, 'wins': 0, 'total_return': 0.0}}
+            data = json.load(f)
+            # Ensure portfolio_value exists for compounding
+            if 'portfolio_value' not in data.get('performance', {}):
+                data.setdefault('performance', {})['portfolio_value'] = 100.0
+            return data
+    return {'entries': [], 'start_date': None, 'performance': {
+        'total_trades': 0, 'wins': 0, 'total_return': 0.0, 'win_rate': 0.0, 'portfolio_value': 100.0
+    }}
 
 
 def update_previous_returns(track_record):
-    """Calculate actual returns for previous day's signals."""
+    """Calculate actual returns for previous day's signals with proper compounding."""
     if not track_record['entries']:
         return track_record
 
     # Initialize performance stats if missing
     if 'performance' not in track_record:
-        track_record['performance'] = {'total_trades': 0, 'wins': 0, 'total_return': 0.0}
+        track_record['performance'] = {
+            'total_trades': 0, 'wins': 0, 'total_return': 0.0, 'win_rate': 0.0, 'portfolio_value': 100.0
+        }
+    if 'portfolio_value' not in track_record['performance']:
+        track_record['performance']['portfolio_value'] = 100.0
 
     # Find entries without calculated returns
     for entry in track_record['entries']:
         if 'returns' in entry:  # Already calculated
             continue
-        if not entry.get('signals'):  # No signals that day
+        if not entry.get('signals'):  # No signals that day = 100% cash, no change
             entry['returns'] = []
             entry['daily_return'] = 0.0
+            entry['portfolio_return'] = 0.0  # Weighted return for portfolio
             continue
 
         entry_date = entry['date']
@@ -328,22 +339,41 @@ def update_previous_returns(track_record):
                         'return_pct': float(pct_return)
                     })
 
-                    # Update performance stats
+                    # Update trade stats
                     track_record['performance']['total_trades'] += 1
-                    track_record['performance']['total_return'] += pct_return / len(entry['signals'])
                     if pct_return > 0:
                         track_record['performance']['wins'] += 1
 
             entry['returns'] = returns
-            entry['daily_return'] = sum(r['return_pct'] for r in returns) / len(returns) if returns else 0.0
+
+            # Calculate weighted portfolio return for the day
+            # Each position is 33.33% of portfolio, cash earns 0%
+            if returns:
+                num_positions = len(returns)
+                weight_per_position = 100 / MAX_POSITIONS / 100  # 0.3333
+                invested_weight = num_positions * weight_per_position
+                avg_position_return = sum(r['return_pct'] for r in returns) / num_positions
+
+                # Weighted daily return (positions contribute, cash = 0)
+                portfolio_daily_return = avg_position_return * invested_weight
+                entry['daily_return'] = avg_position_return
+                entry['portfolio_return'] = portfolio_daily_return
+
+                # COMPOUND the portfolio value
+                track_record['performance']['portfolio_value'] *= (1 + portfolio_daily_return / 100)
+            else:
+                entry['daily_return'] = 0.0
+                entry['portfolio_return'] = 0.0
 
         except Exception as e:
             print(f"Error calculating returns for {entry_date}: {e}")
             continue
 
-    # Calculate win rate
+    # Calculate final stats
     perf = track_record['performance']
     perf['win_rate'] = (perf['wins'] / perf['total_trades'] * 100) if perf['total_trades'] > 0 else 0.0
+    # Compounded total return = current value - starting value (as percentage)
+    perf['total_return'] = perf['portfolio_value'] - 100.0
 
     return track_record
 
