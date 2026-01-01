@@ -2,7 +2,10 @@ name: Daily Signal Generation
 
 on:
   schedule:
-    # Run at 3:45 PM ET (20:45 UTC) on weekdays
+    # Run at both times to handle DST year-round
+    # 19:45 UTC = 3:45 PM EDT (summer, Mar-Nov)
+    # 20:45 UTC = 3:45 PM EST (winter, Nov-Mar)
+    - cron: '45 19 * * 1-5'
     - cron: '45 20 * * 1-5'
   workflow_dispatch:  # Allow manual trigger
 
@@ -11,22 +14,48 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Eastern Time
+        id: time_check
+        run: |
+          # Manual triggers (workflow_dispatch) always proceed
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "Manual trigger - proceeding"
+            echo "proceed=true" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          ET_HOUR=$(TZ='America/New_York' date +%H)
+          ET_MIN=$(TZ='America/New_York' date +%M)
+          echo "Eastern Time: $ET_HOUR:$ET_MIN"
+          # Only proceed if it's 3:40-3:55 PM ET (allow some buffer)
+          if [ "$ET_HOUR" = "15" ] && [ "$ET_MIN" -ge 40 ] && [ "$ET_MIN" -le 55 ]; then
+            echo "proceed=true" >> $GITHUB_OUTPUT
+          else
+            echo "Not 3:45 PM ET window, skipping this run"
+            echo "proceed=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Checkout repo
+        if: steps.time_check.outputs.proceed == 'true'
         uses: actions/checkout@v4
 
       - name: Set up Python
+        if: steps.time_check.outputs.proceed == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
+        if: steps.time_check.outputs.proceed == 'true'
         run: |
           pip install pandas numpy yfinance
 
       - name: Generate signals
+        if: steps.time_check.outputs.proceed == 'true'
         run: python cloud_signal_generator.py
 
       - name: Commit and push signals
+        if: steps.time_check.outputs.proceed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

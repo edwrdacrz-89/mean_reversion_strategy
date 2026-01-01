@@ -14,7 +14,7 @@ EXECUTION RULES (GUARDRAILS):
 1. TIMING:
    - Signals generated at 3:45 PM ET (15 minutes before market close)
    - All orders are Market-On-Close (MOC) orders
-   - GitHub Actions runs at 20:45 UTC (3:45 PM ET)
+   - GitHub Actions runs at 19:45 & 20:45 UTC to handle DST year-round
 
 2. DAILY WORKFLOW:
    - Step 1: SELL all existing positions (MOC)
@@ -56,7 +56,7 @@ TRACK RECORD:
 import pandas as pd
 import numpy as np
 import yfinance as yf
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import json
 from pathlib import Path
 
@@ -135,6 +135,114 @@ SP500_MEMBERS = set(UNIVERSE)  # Simplified - assume all are S&P 500
 # =============================================================================
 # FUNCTIONS
 # =============================================================================
+
+def get_us_market_holidays(year):
+    """Get US stock market holidays for a given year."""
+    from datetime import date
+
+    holidays = []
+
+    # New Year's Day (Jan 1, observed on nearest weekday if weekend)
+    nyd = date(year, 1, 1)
+    if nyd.weekday() == 5:  # Saturday
+        holidays.append(date(year - 1, 12, 31))  # Observed Friday before
+    elif nyd.weekday() == 6:  # Sunday
+        holidays.append(date(year, 1, 2))  # Observed Monday after
+    else:
+        holidays.append(nyd)
+
+    # MLK Day (3rd Monday of January)
+    jan1 = date(year, 1, 1)
+    days_until_monday = (7 - jan1.weekday()) % 7
+    first_monday = jan1 + timedelta(days=days_until_monday)
+    holidays.append(first_monday + timedelta(weeks=2))
+
+    # Presidents' Day (3rd Monday of February)
+    feb1 = date(year, 2, 1)
+    days_until_monday = (7 - feb1.weekday()) % 7
+    first_monday = feb1 + timedelta(days=days_until_monday)
+    holidays.append(first_monday + timedelta(weeks=2))
+
+    # Good Friday (Friday before Easter - approximate with algorithm)
+    # Using anonymous Gregorian algorithm
+    a = year % 19
+    b = year // 100
+    c = year % 100
+    d = b // 4
+    e = b % 4
+    f = (b + 8) // 25
+    g = (b - f + 1) // 3
+    h = (19 * a + b - d - g + 15) % 30
+    i = c // 4
+    k = c % 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7
+    m = (a + 11 * h + 22 * l) // 451
+    month = (h + l - 7 * m + 114) // 31
+    day = ((h + l - 7 * m + 114) % 31) + 1
+    easter = date(year, month, day)
+    holidays.append(easter - timedelta(days=2))  # Good Friday
+
+    # Memorial Day (last Monday of May)
+    may31 = date(year, 5, 31)
+    days_since_monday = may31.weekday()
+    holidays.append(may31 - timedelta(days=days_since_monday))
+
+    # Juneteenth (June 19, observed on nearest weekday if weekend)
+    juneteenth = date(year, 6, 19)
+    if juneteenth.weekday() == 5:  # Saturday
+        holidays.append(date(year, 6, 18))
+    elif juneteenth.weekday() == 6:  # Sunday
+        holidays.append(date(year, 6, 20))
+    else:
+        holidays.append(juneteenth)
+
+    # Independence Day (July 4, observed on nearest weekday if weekend)
+    july4 = date(year, 7, 4)
+    if july4.weekday() == 5:  # Saturday
+        holidays.append(date(year, 7, 3))
+    elif july4.weekday() == 6:  # Sunday
+        holidays.append(date(year, 7, 5))
+    else:
+        holidays.append(july4)
+
+    # Labor Day (1st Monday of September)
+    sep1 = date(year, 9, 1)
+    days_until_monday = (7 - sep1.weekday()) % 7
+    holidays.append(sep1 + timedelta(days=days_until_monday))
+
+    # Thanksgiving (4th Thursday of November)
+    nov1 = date(year, 11, 1)
+    days_until_thursday = (3 - nov1.weekday()) % 7
+    first_thursday = nov1 + timedelta(days=days_until_thursday)
+    holidays.append(first_thursday + timedelta(weeks=3))
+
+    # Christmas Day (Dec 25, observed on nearest weekday if weekend)
+    xmas = date(year, 12, 25)
+    if xmas.weekday() == 5:  # Saturday
+        holidays.append(date(year, 12, 24))
+    elif xmas.weekday() == 6:  # Sunday
+        holidays.append(date(year, 12, 26))
+    else:
+        holidays.append(xmas)
+
+    return holidays
+
+def is_market_holiday(check_date=None):
+    """Check if a date is a US market holiday."""
+    if check_date is None:
+        check_date = date.today()
+    elif isinstance(check_date, datetime):
+        check_date = check_date.date()
+
+    # Check current year's holidays
+    holidays = get_us_market_holidays(check_date.year)
+
+    # Also check next year's holidays (for Dec 31 when Jan 1 is Saturday)
+    if check_date.month == 12 and check_date.day == 31:
+        next_year_holidays = get_us_market_holidays(check_date.year + 1)
+        holidays.extend(next_year_holidays)
+
+    return check_date in holidays
 
 def get_prices(tickers):
     """Get historical prices."""
@@ -421,6 +529,11 @@ def main():
     # Check if trading day
     if datetime.now().weekday() >= 5:
         print("Weekend - skipping")
+        return
+
+    # Check if market holiday
+    if is_market_holiday():
+        print(f"Market holiday - skipping")
         return
 
     print(f"Universe: {len(UNIVERSE)} stocks")
