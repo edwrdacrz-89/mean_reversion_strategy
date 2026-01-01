@@ -49,10 +49,10 @@ HOLDING_PERIOD = 1  # Days (close-to-close)
 
 TRACK_RECORD_FILE = Path("track_record.json")
 
-# GitHub raw URLs for fetching latest data
+# GitHub API URLs for fetching latest data (more reliable than raw URLs)
 GITHUB_REPO = "edwrdacrz-89/mean_reversion_strategy"
-GITHUB_TRACK_RECORD_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/master/track_record.json"
-GITHUB_SIGNALS_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/master/signals.json"
+GITHUB_TRACK_RECORD_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/track_record.json"
+GITHUB_SIGNALS_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/signals.json"
 
 # =============================================================================
 # PAGE CONFIG
@@ -564,12 +564,18 @@ def generate_todays_signals(scores_df, intraday_data, sp500_members):
 # =============================================================================
 
 def fetch_from_github(url):
-    """Fetch JSON data from GitHub raw URL. Returns (data, error_message)."""
+    """Fetch JSON data from GitHub API. Returns (data, error_message)."""
     import requests
+    import base64
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
-            return response.json(), None
+            api_data = response.json()
+            # GitHub API returns base64 encoded content
+            content = base64.b64decode(api_data['content']).decode('utf-8')
+            return json.loads(content), None
+        elif response.status_code == 404:
+            return None, "File not found on GitHub"
         else:
             return None, f"GitHub returned status {response.status_code}"
     except requests.exceptions.Timeout:
