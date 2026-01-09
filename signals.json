@@ -1,29 +1,7 @@
 {
-  "date": "2026-01-08",
-  "generated_at": "2026-01-08 17:50:06 UTC",
-  "signals": [
-    {
-      "ticker": "AMAT",
-      "price": 281.6400146484375,
-      "drop_pct": 3.6139620525107023,
-      "score": 0.3541321369567043,
-      "consistency": 0.5661764705882353
-    },
-    {
-      "ticker": "GLW",
-      "price": 85.33000183105469,
-      "drop_pct": 3.0230663681037715,
-      "score": 0.34222724663773135,
-      "consistency": 0.59375
-    },
-    {
-      "ticker": "SANM",
-      "price": 149.10000610351562,
-      "drop_pct": 2.803121228199278,
-      "score": 0.600569065154994,
-      "consistency": 0.5611510791366906
-    }
-  ],
-  "allocation_per_position": 33.333333333333336,
-  "cash_allocation": 0.0
+  "date": null,
+  "generated_at": null,
+  "signals": [],
+  "allocation_per_position": 33.33,
+  "cash_allocation": 100
 }
