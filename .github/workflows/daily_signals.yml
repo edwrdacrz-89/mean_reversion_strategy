@@ -29,8 +29,10 @@ jobs:
           ET_HOUR=$(TZ='America/New_York' date +%H)
           ET_MIN=$(TZ='America/New_York' date +%M)
           echo "Eastern Time: $ET_HOUR:$ET_MIN"
-          # Only proceed if it's 3:40-3:55 PM ET (allow some buffer)
-          if [ "$ET_HOUR" = "15" ] && [ "$ET_MIN" -ge 40 ] && [ "$ET_MIN" -le 55 ]; then
+          # Proceed if 3:40-4:10 PM ET (wide buffer for GitHub delays)
+          if [ "$ET_HOUR" = "15" ] && [ "$ET_MIN" -ge 40 ]; then
+            echo "proceed=true" >> $GITHUB_OUTPUT
+          elif [ "$ET_HOUR" = "16" ] && [ "$ET_MIN" -le 10 ]; then
             echo "proceed=true" >> $GITHUB_OUTPUT
           else
             echo "Not 3:45 PM ET window, skipping this run"
