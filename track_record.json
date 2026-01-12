@@ -1,6 +1,33 @@
 {
-  "entries": [],
-  "start_date": null,
+  "entries": [
+    {
+      "date": "2026-01-12",
+      "signals": [
+        {
+          "ticker": "COF",
+          "price": 233.57000732421875,
+          "drop_pct": 6.272066539097801,
+          "score": 0.12113254923371759,
+          "consistency": 0.56
+        },
+        {
+          "ticker": "QCOM",
+          "price": 169.63999938964844,
+          "drop_pct": 4.578692454460952,
+          "score": 0.20040665953231376,
+          "consistency": 0.5801526717557252
+        },
+        {
+          "ticker": "TDG",
+          "price": 1383.385009765625,
+          "drop_pct": 0.6253156238762169,
+          "score": 0.13368149385170694,
+          "consistency": 0.5615384615384615
+        }
+      ]
+    }
+  ],
+  "start_date": "2026-01-12",
   "performance": {
     "total_trades": 0,
     "wins": 0,
