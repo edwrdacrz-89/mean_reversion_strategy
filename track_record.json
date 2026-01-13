@@ -24,15 +24,63 @@
           "score": 0.13368149385170694,
           "consistency": 0.5615384615384615
         }
+      ],
+      "returns": [
+        {
+          "ticker": "COF",
+          "entry_price": 233.1999969482422,
+          "exit_price": 231.13999938964844,
+          "return_pct": -0.8833608857426178
+        },
+        {
+          "ticker": "QCOM",
+          "entry_price": 169.27000427246094,
+          "exit_price": 165.30499267578125,
+          "return_pct": -2.342418323743593
+        },
+        {
+          "ticker": "TDG",
+          "entry_price": 1386.1199951171875,
+          "exit_price": 1383.2950439453125,
+          "return_pct": -0.20380278632631432
+        }
+      ],
+      "daily_return": -1.143193998604175,
+      "portfolio_return": -1.143193998604175
+    },
+    {
+      "date": "2026-01-13",
+      "signals": [
+        {
+          "ticker": "LRCX",
+          "price": 214.39999389648438,
+          "drop_pct": 2.7223231243908423,
+          "score": 0.44097259493487145,
+          "consistency": 0.5725806451612904
+        },
+        {
+          "ticker": "QCOM",
+          "price": 165.30999755859375,
+          "drop_pct": 2.339461578492707,
+          "score": 0.17132823574406286,
+          "consistency": 0.5757575757575758
+        },
+        {
+          "ticker": "IDXX",
+          "price": 713.8499755859375,
+          "drop_pct": 1.5053305967054693,
+          "score": 0.17268427217193688,
+          "consistency": 0.5531914893617021
+        }
       ]
     }
   ],
   "start_date": "2026-01-12",
   "performance": {
-    "total_trades": 0,
+    "total_trades": 3,
     "wins": 0,
-    "total_return": 0.0,
+    "total_return": -1.1431939986041755,
     "win_rate": 0.0,
-    "portfolio_value": 100.0
+    "portfolio_value": 98.85680600139582
   }
 }
