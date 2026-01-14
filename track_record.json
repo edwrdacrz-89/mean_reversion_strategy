@@ -72,15 +72,63 @@
           "score": 0.17268427217193688,
           "consistency": 0.5531914893617021
         }
+      ],
+      "returns": [
+        {
+          "ticker": "LRCX",
+          "entry_price": 214.3800048828125,
+          "exit_price": 208.50999450683594,
+          "return_pct": -2.7381333343962337
+        },
+        {
+          "ticker": "QCOM",
+          "entry_price": 165.2899932861328,
+          "exit_price": 164.3699951171875,
+          "return_pct": -0.5565964101364005
+        },
+        {
+          "ticker": "IDXX",
+          "entry_price": 714.0399780273438,
+          "exit_price": 710.4400024414062,
+          "return_pct": -0.5041700320314055
+        }
+      ],
+      "daily_return": -1.2662999255213465,
+      "portfolio_return": -1.2662999255213465
+    },
+    {
+      "date": "2026-01-14",
+      "signals": [
+        {
+          "ticker": "AVGO",
+          "price": 339.7900085449219,
+          "drop_pct": 4.179232796264327,
+          "score": 0.28637934205024673,
+          "consistency": 0.578125
+        },
+        {
+          "ticker": "LRCX",
+          "price": 208.47999572753906,
+          "drop_pct": 2.752126607375807,
+          "score": 0.4549656819827349,
+          "consistency": 0.5725806451612904
+        },
+        {
+          "ticker": "NVDA",
+          "price": 182.85000610351562,
+          "drop_pct": 1.5930205553900372,
+          "score": 0.3124218387411501,
+          "consistency": 0.5827338129496403
+        }
       ]
     }
   ],
   "start_date": "2026-01-12",
   "performance": {
-    "total_trades": 3,
+    "total_trades": 6,
     "wins": 0,
-    "total_return": -1.1431939986041755,
+    "total_return": -2.395017659372627,
     "win_rate": 0.0,
-    "portfolio_value": 98.85680600139582
+    "portfolio_value": 97.60498234062737
   }
 }
