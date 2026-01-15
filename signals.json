@@ -1,29 +1,7 @@
 {
-  "date": "2026-01-14",
-  "generated_at": "2026-01-14 20:56:39 UTC",
-  "signals": [
-    {
-      "ticker": "AVGO",
-      "price": 339.7900085449219,
-      "drop_pct": 4.179232796264327,
-      "score": 0.28637934205024673,
-      "consistency": 0.578125
-    },
-    {
-      "ticker": "LRCX",
-      "price": 208.47999572753906,
-      "drop_pct": 2.752126607375807,
-      "score": 0.4549656819827349,
-      "consistency": 0.5725806451612904
-    },
-    {
-      "ticker": "NVDA",
-      "price": 182.85000610351562,
-      "drop_pct": 1.5930205553900372,
-      "score": 0.3124218387411501,
-      "consistency": 0.5827338129496403
-    }
-  ],
-  "allocation_per_position": 33.333333333333336,
-  "cash_allocation": 0.0
+  "date": null,
+  "generated_at": null,
+  "signals": [],
+  "allocation_per_position": 33.33,
+  "cash_allocation": 100
 }
