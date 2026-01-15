@@ -97,36 +97,27 @@ ORDER_TYPE = "MOC"  # Market-On-Close
 HOLDING_PERIOD_DAYS = 1  # Close-to-close, sell next day
 
 # Universe - hardcoded for cloud (no local files)
-# These are S&P 500 stocks in our target industries
+# SYSTEMIC POWER UNIVERSE: Government contracts, regulated monopolies, too-big-to-fail
 UNIVERSE = [
-    # Full 125-stock universe from backtester (universe_cache.csv)
-    # Diagnostics & Research
-    'A', 'DGX', 'DHR', 'IDXX', 'ILMN', 'IQV', 'LH', 'MTD', 'TMO', 'WAT',
-    # IT Services
-    'ACN', 'BR', 'CTSH', 'DXC', 'FIS', 'IBM', 'IT', 'JKHY', 'LDOS', 'UIS', 'XRX',
-    # Software
-    'ADBE', 'ADP', 'ADSK', 'AKAM', 'CDNS', 'CRM', 'FFIV', 'FTNT', 'INTU', 'MSFT',
-    'NTAP', 'ORCL', 'PAYX', 'PTC', 'ROP', 'S', 'SNPS', 'TDC', 'VRSN',
-    # Semiconductors
-    'ADI', 'AMD', 'AMAT', 'AVGO', 'INTC', 'IPGP', 'KLAC', 'LRCX', 'MCHP', 'MU',
-    'NVDA', 'QCOM', 'QRVO', 'SWKS', 'TER', 'TXN',
-    # Electronic Components
-    'APH', 'GLW', 'JBL', 'SANM', 'TEL',
-    # Insurance P&C
-    'AIZ', 'ALL', 'CB', 'CINF', 'HIG', 'L', 'PGR', 'TRV',
-    # Banks
-    'BAC', 'BK', 'C', 'JPM', 'WFC',
-    # Asset Management
-    'AMG', 'AMP', 'BEN', 'BLK', 'IVZ', 'NTRS', 'PFG', 'PX', 'RJF', 'STT', 'TROW',
-    # Credit Services
-    'AXP', 'COF', 'MA', 'NAVI', 'PYPL', 'SLM', 'SYF', 'V', 'WU',
-    # Aerospace & Defense
-    'BA', 'GD', 'GE', 'HII', 'LMT', 'NOC', 'TDG', 'TXT',
-    # Specialty Industrial Machinery
-    'AME', 'AOS', 'CMI', 'CR', 'DOV', 'EMR', 'ETN', 'FLS', 'IR', 'ITT', 'ITW',
-    'PH', 'PNR', 'ROK', 'XYL',
-    # Building & Construction
-    'DHI', 'JCI', 'KBH', 'LEN', 'LPX', 'MAS', 'PHM',
+    # Aerospace & Defense (DoD contracts, classified programs)
+    'LMT', 'RTX', 'NOC', 'GD', 'BA', 'LHX', 'HII', 'TXT', 'TDG', 'GE',
+    # Big Banks (Too-big-to-fail, Fed backstop, FDIC)
+    'JPM', 'BAC', 'WFC', 'C', 'GS', 'MS', 'USB', 'PNC', 'BK',
+    # Insurance (State-regulated, mandated products)
+    'BRK.B', 'PGR', 'TRV', 'ALL', 'MET', 'PRU', 'AFL', 'CB', 'HIG', 'L', 'AIZ', 'CINF',
+    # Managed Healthcare (Medicare Advantage, Medicaid contracts)
+    'UNH', 'CVS', 'ELV', 'CI', 'HUM', 'CNC', 'HCA', 'MOH',
+    # Government IT Services (Federal contracts)
+    'ACN', 'LDOS', 'IBM',
+    # Utilities - Regulated (Rate-setting monopolies, government-granted territories)
+    'NEE', 'DUK', 'SO', 'D', 'AEP', 'XEL', 'WEC', 'ED', 'ES', 'EXC',
+    'FE', 'PPL', 'AES', 'CMS', 'DTE', 'EVRG', 'NI', 'PEG', 'PNW',
+    # Telecom (FCC licensed, government contracts)
+    'T', 'VZ', 'TMUS',
+    # Waste Management (Municipal contracts, regulated)
+    'WM', 'RSG',
+    # Infrastructure/Engineering (Government contracts)
+    'PWR', 'EME', 'FLR',
 ]
 
 # Current S&P 500 members (subset for filtering)

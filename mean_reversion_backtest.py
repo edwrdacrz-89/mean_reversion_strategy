@@ -23,42 +23,43 @@ warnings.filterwarnings('ignore')
 # CONFIGURATION
 # =============================================================================
 
-# Target Industries (GICS Classification from spec)
+# Target Industries - SYSTEMIC POWER UNIVERSE
+# Focus: Government contracts, regulated monopolies, too-big-to-fail institutions
 TARGET_INDUSTRIES = [
-    'Semiconductors',
-    'Semiconductor Equipment & Materials',
-    'Software - Application',
-    'Software - Infrastructure',
-    'Information Technology Services',
-    'Electronic Components',
-    'Building Products & Equipment',
-    'Residential Construction',
-    'Credit Services',
-    'Insurance - Property & Casualty',
-    'Banks - Diversified',
-    'Asset Management',
     'Aerospace & Defense',
-    'Specialty Industrial Machinery',
-    'Diagnostics & Research',
+    'Banks - Diversified',
+    'Banks - Regional',
+    'Insurance - Property & Casualty',
+    'Insurance - Life',
+    'Insurance - Diversified',
+    'Healthcare Plans',
+    'Medical Care Facilities',
+    'Utilities - Regulated Electric',
+    'Utilities - Diversified',
+    'Utilities - Independent Power Producers',
+    'Telecom Services',
+    'Information Technology Services',
+    'Waste Management',
+    'Engineering & Construction',
 ]
 
 # Yahoo Finance uses slightly different industry names - create mapping
 INDUSTRY_ALIASES = {
-    'Semiconductors': ['Semiconductors', 'Semiconductor'],
-    'Semiconductor Equipment & Materials': ['Semiconductor Equipment & Materials', 'Semiconductor Equipment'],
-    'Software - Application': ['Software - Application', 'Software—Application', 'Application Software'],
-    'Software - Infrastructure': ['Software - Infrastructure', 'Software—Infrastructure', 'Systems Software'],
-    'Information Technology Services': ['Information Technology Services', 'IT Services'],
-    'Electronic Components': ['Electronic Components', 'Electronic Equipment & Instruments'],
-    'Building Products & Equipment': ['Building Products & Equipment', 'Building Products'],
-    'Residential Construction': ['Residential Construction', 'Homebuilding'],
-    'Credit Services': ['Credit Services', 'Consumer Finance'],
-    'Insurance - Property & Casualty': ['Insurance - Property & Casualty', 'Property & Casualty Insurance'],
-    'Banks - Diversified': ['Banks - Diversified', 'Diversified Banks', 'Banks—Diversified'],
-    'Asset Management': ['Asset Management', 'Asset Management & Custody Banks'],
     'Aerospace & Defense': ['Aerospace & Defense', 'Aerospace/Defense'],
-    'Specialty Industrial Machinery': ['Specialty Industrial Machinery', 'Industrial Machinery'],
-    'Diagnostics & Research': ['Diagnostics & Research', 'Life Sciences Tools & Services', 'Health Care Equipment'],
+    'Banks - Diversified': ['Banks - Diversified', 'Diversified Banks', 'Banks—Diversified', 'Money Center Banks'],
+    'Banks - Regional': ['Banks - Regional', 'Regional Banks', 'Banks—Regional'],
+    'Insurance - Property & Casualty': ['Insurance - Property & Casualty', 'Property & Casualty Insurance'],
+    'Insurance - Life': ['Insurance - Life', 'Life Insurance'],
+    'Insurance - Diversified': ['Insurance - Diversified', 'Multi-line Insurance', 'Insurance—Diversified'],
+    'Healthcare Plans': ['Healthcare Plans', 'Health Care Plans', 'Managed Healthcare'],
+    'Medical Care Facilities': ['Medical Care Facilities', 'Health Care Facilities', 'Hospitals'],
+    'Utilities - Regulated Electric': ['Utilities - Regulated Electric', 'Utilities—Regulated Electric', 'Electric Utilities'],
+    'Utilities - Diversified': ['Utilities - Diversified', 'Utilities—Diversified', 'Multi-Utilities'],
+    'Utilities - Independent Power Producers': ['Utilities - Independent Power Producers', 'Independent Power Producers'],
+    'Telecom Services': ['Telecom Services', 'Telecommunications Services', 'Wireless Telecommunications'],
+    'Information Technology Services': ['Information Technology Services', 'IT Services'],
+    'Waste Management': ['Waste Management', 'Environmental Services'],
+    'Engineering & Construction': ['Engineering & Construction', 'Construction & Engineering'],
 }
 
 # Strategy Parameters
