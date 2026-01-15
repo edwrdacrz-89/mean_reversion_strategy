@@ -1,6 +1,33 @@
 {
-  "entries": [],
-  "start_date": null,
+  "entries": [
+    {
+      "date": "2026-01-15",
+      "signals": [
+        {
+          "ticker": "MET",
+          "price": 77.84449768066406,
+          "drop_pct": 1.0241625296724268,
+          "score": 0.0826323720978931,
+          "consistency": 0.5851851851851851
+        },
+        {
+          "ticker": "HIG",
+          "price": 130.72999572753906,
+          "drop_pct": 0.9095709958774782,
+          "score": 0.06256581939251978,
+          "consistency": 0.5923076923076923
+        },
+        {
+          "ticker": "AFL",
+          "price": 109.56500244140625,
+          "drop_pct": 0.5581755872809172,
+          "score": 0.06268189488083525,
+          "consistency": 0.5547445255474452
+        }
+      ]
+    }
+  ],
+  "start_date": "2026-01-15",
   "performance": {
     "total_trades": 0,
     "wins": 0,
