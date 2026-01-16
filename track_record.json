@@ -24,15 +24,63 @@
           "score": 0.06268189488083525,
           "consistency": 0.5547445255474452
         }
+      ],
+      "returns": [
+        {
+          "ticker": "MET",
+          "entry_price": 77.9000015258789,
+          "exit_price": 76.7300033569336,
+          "return_pct": -1.501923165632585
+        },
+        {
+          "ticker": "HIG",
+          "entry_price": 130.82000732421875,
+          "exit_price": 129.36000061035156,
+          "return_pct": -1.1160423728220477
+        },
+        {
+          "ticker": "AFL",
+          "entry_price": 109.61000061035156,
+          "exit_price": 109.76000213623047,
+          "return_pct": 0.13685021899793706
+        }
+      ],
+      "daily_return": -0.8270384398188986,
+      "portfolio_return": -0.8270384398188986
+    },
+    {
+      "date": "2026-01-16",
+      "signals": [
+        {
+          "ticker": "HCA",
+          "price": 469.8699951171875,
+          "drop_pct": 2.8792875211361673,
+          "score": 0.1586099992076799,
+          "consistency": 0.5590551181102362
+        },
+        {
+          "ticker": "CNC",
+          "price": 45.974998474121094,
+          "drop_pct": 2.7395852995594496,
+          "score": 0.1849246122230349,
+          "consistency": 0.5827338129496403
+        },
+        {
+          "ticker": "BK",
+          "price": 121.3499984741211,
+          "drop_pct": 2.1134167304859943,
+          "score": 0.1963483533736844,
+          "consistency": 0.6293103448275862
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 0,
-    "wins": 0,
-    "total_return": 0.0,
-    "win_rate": 0.0,
-    "portfolio_value": 100.0
+    "total_trades": 3,
+    "wins": 1,
+    "total_return": -0.8270384398188924,
+    "win_rate": 33.33333333333333,
+    "portfolio_value": 99.17296156018111
   }
 }
