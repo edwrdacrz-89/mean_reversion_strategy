@@ -72,15 +72,63 @@
           "score": 0.1963483533736844,
           "consistency": 0.6293103448275862
         }
+      ],
+      "returns": [
+        {
+          "ticker": "HCA",
+          "entry_price": 469.2900085449219,
+          "exit_price": 464.32501220703125,
+          "return_pct": -1.0579804060361453
+        },
+        {
+          "ticker": "CNC",
+          "entry_price": 45.75,
+          "exit_price": 45.744998931884766,
+          "return_pct": -0.010931296426741803
+        },
+        {
+          "ticker": "BK",
+          "entry_price": 121.33000183105469,
+          "exit_price": 120.67500305175781,
+          "return_pct": -0.5398489816302192
+        }
+      ],
+      "daily_return": -0.5362535613643687,
+      "portfolio_return": -0.5362535613643687
+    },
+    {
+      "date": "2026-01-20",
+      "signals": [
+        {
+          "ticker": "IBM",
+          "price": 291.3279113769531,
+          "drop_pct": 4.692021271550724,
+          "score": 0.1432272688675811,
+          "consistency": 0.5511811023622047
+        },
+        {
+          "ticker": "EME",
+          "price": 687.8200073242188,
+          "drop_pct": 1.5557679484757023,
+          "score": 0.20429367630644954,
+          "consistency": 0.6015625
+        },
+        {
+          "ticker": "HCA",
+          "price": 464.32501220703125,
+          "drop_pct": 1.0579804060361453,
+          "score": 0.17279189264278422,
+          "consistency": 0.5634920634920635
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 3,
+    "total_trades": 6,
     "wins": 1,
-    "total_return": -0.8270384398188924,
-    "win_rate": 33.33333333333333,
-    "portfolio_value": 99.17296156018111
+    "total_return": -1.3588569780958721,
+    "win_rate": 16.666666666666664,
+    "portfolio_value": 98.64114302190413
   }
 }
