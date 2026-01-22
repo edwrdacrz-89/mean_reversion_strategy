@@ -168,15 +168,63 @@
           "score": 0.06646812750543411,
           "consistency": 0.5611510791366906
         }
+      ],
+      "returns": [
+        {
+          "ticker": "CNC",
+          "entry_price": 45.2599983215332,
+          "exit_price": 45.380001068115234,
+          "return_pct": 0.2651408551310925
+        },
+        {
+          "ticker": "BK",
+          "entry_price": 119.76000213623047,
+          "exit_price": 120.19999694824219,
+          "return_pct": 0.3673971310648541
+        },
+        {
+          "ticker": "CB",
+          "entry_price": 299.9800109863281,
+          "exit_price": 300.69500732421875,
+          "return_pct": 0.2383479937678953
+        }
+      ],
+      "daily_return": 0.29029532665461394,
+      "portfolio_return": 0.29029532665461394
+    },
+    {
+      "date": "2026-01-22",
+      "signals": [
+        {
+          "ticker": "GE",
+          "price": 294.9049987792969,
+          "drop_pct": 7.408163648572409,
+          "score": 0.12816859312942844,
+          "consistency": 0.5901639344262295
+        },
+        {
+          "ticker": "TDG",
+          "price": 1420.4649658203125,
+          "drop_pct": 2.0355463555362934,
+          "score": 0.13882011228578225,
+          "consistency": 0.5703125
+        },
+        {
+          "ticker": "ES",
+          "price": 70.47000122070312,
+          "drop_pct": 1.2748614005743315,
+          "score": 0.16324247459571956,
+          "consistency": 0.5934959349593496
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 9,
-    "wins": 4,
-    "total_return": 0.38935368808631665,
-    "win_rate": 44.44444444444444,
-    "portfolio_value": 100.38935368808632
+    "total_trades": 12,
+    "wins": 7,
+    "total_return": 0.6807792903016008,
+    "win_rate": 58.333333333333336,
+    "portfolio_value": 100.6807792903016
   }
 }
