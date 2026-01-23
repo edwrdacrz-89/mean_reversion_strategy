@@ -216,15 +216,63 @@
           "score": 0.16324247459571956,
           "consistency": 0.5934959349593496
         }
+      ],
+      "returns": [
+        {
+          "ticker": "GE",
+          "entry_price": 295.0,
+          "exit_price": 293.8900146484375,
+          "return_pct": -0.37626622086864403
+        },
+        {
+          "ticker": "TDG",
+          "entry_price": 1420.52001953125,
+          "exit_price": 1417.9200439453125,
+          "return_pct": -0.18302984471809502
+        },
+        {
+          "ticker": "ES",
+          "entry_price": 70.44999694824219,
+          "exit_price": 69.55500030517578,
+          "return_pct": -1.2703998322724377
+        }
+      ],
+      "daily_return": -0.6098986326197257,
+      "portfolio_return": -0.6098986326197257
+    },
+    {
+      "date": "2026-01-23",
+      "signals": [
+        {
+          "ticker": "BK",
+          "price": 117.70500183105469,
+          "drop_pct": 2.05940960878372,
+          "score": 0.17191238769506825,
+          "consistency": 0.6186440677966102
+        },
+        {
+          "ticker": "ES",
+          "price": 69.55500030517578,
+          "drop_pct": 1.2703998322724377,
+          "score": 0.1619258758819999,
+          "consistency": 0.5887096774193549
+        },
+        {
+          "ticker": "EME",
+          "price": 694.60498046875,
+          "drop_pct": 1.1787098987074673,
+          "score": 0.22203952704607735,
+          "consistency": 0.6
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 12,
+    "total_trades": 15,
     "wins": 7,
-    "total_return": 0.6807792903016008,
-    "win_rate": 58.333333333333336,
-    "portfolio_value": 100.6807792903016
+    "total_return": 0.06672859409917464,
+    "win_rate": 46.666666666666664,
+    "portfolio_value": 100.06672859409917
   }
 }
