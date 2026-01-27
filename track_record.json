@@ -312,15 +312,63 @@
           "score": 0.1520652154789797,
           "consistency": 0.5648854961832062
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 660.969970703125,
+          "exit_price": 678.6300048828125,
+          "return_pct": 2.671836083703039
+        },
+        {
+          "ticker": "RTX",
+          "entry_price": 194.1300048828125,
+          "exit_price": 201.0399932861328,
+          "return_pct": 3.559464394744934
+        },
+        {
+          "ticker": "T",
+          "entry_price": 23.450000762939453,
+          "exit_price": 23.014999389648438,
+          "return_pct": -1.8550164568800136
+        }
+      ],
+      "daily_return": 1.458761340522653,
+      "portfolio_return": 1.458761340522653
+    },
+    {
+      "date": "2026-01-27",
+      "signals": [
+        {
+          "ticker": "CNC",
+          "price": 41.375,
+          "drop_pct": 10.59852832470493,
+          "score": 0.1602146709533675,
+          "consistency": 0.5827338129496403
+        },
+        {
+          "ticker": "MOH",
+          "price": 183.8800048828125,
+          "drop_pct": 8.540163097896155,
+          "score": 0.18602186737582838,
+          "consistency": 0.583941605839416
+        },
+        {
+          "ticker": "T",
+          "price": 23.014999389648438,
+          "drop_pct": 1.8550164568800136,
+          "score": 0.15091352528728053,
+          "consistency": 0.5606060606060606
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 18,
-    "wins": 10,
-    "total_return": 1.4390067298258913,
-    "win_rate": 55.55555555555556,
-    "portfolio_value": 101.43900672982589
+    "total_trades": 21,
+    "wins": 12,
+    "total_return": 2.9187597442107602,
+    "win_rate": 57.14285714285714,
+    "portfolio_value": 102.91875974421076
   }
 }
