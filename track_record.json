@@ -408,15 +408,63 @@
           "score": 0.13365197907290297,
           "consistency": 0.5615384615384615
         }
+      ],
+      "returns": [
+        {
+          "ticker": "HCA",
+          "entry_price": 491.2300109863281,
+          "exit_price": 482.07000732421875,
+          "return_pct": -1.8647076638736382
+        },
+        {
+          "ticker": "GD",
+          "entry_price": 356.67999267578125,
+          "exit_price": 350.0799865722656,
+          "return_pct": -1.8503998651572724
+        },
+        {
+          "ticker": "TDG",
+          "entry_price": 1412.1300048828125,
+          "exit_price": 1421.0899658203125,
+          "return_pct": 0.6344997207423232
+        }
+      ],
+      "daily_return": -1.0268692694295292,
+      "portfolio_return": -1.0268692694295292
+    },
+    {
+      "date": "2026-01-29",
+      "signals": [
+        {
+          "ticker": "HCA",
+          "price": 481.5899963378906,
+          "drop_pct": 1.9624238000201906,
+          "score": 0.18299361831991237,
+          "consistency": 0.5691056910569106
+        },
+        {
+          "ticker": "GD",
+          "price": 350.17999267578125,
+          "drop_pct": 1.8223618182891574,
+          "score": 0.11971987295453028,
+          "consistency": 0.5648854961832062
+        },
+        {
+          "ticker": "ES",
+          "price": 68.86299896240234,
+          "drop_pct": 1.4835515605713336,
+          "score": 0.15043657075994804,
+          "consistency": 0.584
+        }
       ]
     }
   ],
   "start_date": "2026-01-15",
   "performance": {
-    "total_trades": 24,
-    "wins": 15,
-    "total_return": 5.360341717710952,
-    "win_rate": 62.5,
-    "portfolio_value": 105.36034171771095
+    "total_trades": 27,
+    "wins": 16,
+    "total_return": 4.27842874644584,
+    "win_rate": 59.25925925925925,
+    "portfolio_value": 104.27842874644584
   }
 }
