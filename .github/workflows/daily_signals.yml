@@ -33,9 +33,7 @@ jobs:
           # GitHub cron jobs can run 15-45 min late, so we need buffer
           # 19:45 UTC cron targets this window (3:45 PM EDT / 2:45 PM EST)
           # 20:45 UTC cron targets this window (3:45 PM EST / 4:45 PM EDT)
-          if [ "$ET_HOUR" = "14" ] && [ "$ET_MIN" -ge 30 ]; then
-            echo "proceed=true" >> $GITHUB_OUTPUT
-          elif [ "$ET_HOUR" = "15" ]; then
+          if [ "$ET_HOUR" = "15" ]; then
             echo "proceed=true" >> $GITHUB_OUTPUT
           else
             echo "Not 2:30-4:00 PM ET window (market closes at 4), skipping"

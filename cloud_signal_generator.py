@@ -104,7 +104,7 @@ UNIVERSE = [
     # Big Banks (Too-big-to-fail, Fed backstop, FDIC)
     'JPM', 'BAC', 'WFC', 'C', 'GS', 'MS', 'USB', 'PNC', 'BK',
     # Insurance (State-regulated, mandated products)
-    'BRK.B', 'PGR', 'TRV', 'ALL', 'MET', 'PRU', 'AFL', 'CB', 'HIG', 'L', 'AIZ', 'CINF',
+    'PGR', 'TRV', 'ALL', 'MET', 'PRU', 'AFL', 'CB', 'HIG', 'L', 'AIZ', 'CINF',
     # Managed Healthcare (Medicare Advantage, Medicaid contracts)
     'UNH', 'CVS', 'ELV', 'CI', 'HUM', 'CNC', 'HCA', 'MOH',
     # Government IT Services (Federal contracts)
