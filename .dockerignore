@@ -1,0 +1,10 @@
+.git
+.github
+.claude
+__pycache__
+*.pyc
+*.log
+sp500_data/.git
+.idea
+*.bat
+nul
