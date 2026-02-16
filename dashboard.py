@@ -13,6 +13,7 @@ import plotly.graph_objects as go
 import json
 import requests
 import base64
+import os
 
 # =============================================================================
 # CONFIG
@@ -24,6 +25,29 @@ GITHUB_TRACK_RECORD_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/
 GITHUB_SIGNALS_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/signals.json"
 
 st.set_page_config(page_title="Mean Reversion Strategy", page_icon="📈", layout="wide")
+
+# =============================================================================
+# AUTH
+# =============================================================================
+
+DASHBOARD_PASSWORD = os.environ.get("DASHBOARD_PASSWORD")
+
+if DASHBOARD_PASSWORD:
+    if "authenticated" not in st.session_state:
+        st.session_state.authenticated = False
+
+    if not st.session_state.authenticated:
+        st.markdown("<div style='max-width:400px;margin:100px auto;'>", unsafe_allow_html=True)
+        st.title("Login")
+        pwd = st.text_input("Password", type="password")
+        if st.button("Enter", use_container_width=True):
+            if pwd == DASHBOARD_PASSWORD:
+                st.session_state.authenticated = True
+                st.rerun()
+            else:
+                st.error("Wrong password")
+        st.markdown("</div>", unsafe_allow_html=True)
+        st.stop()
 
 # =============================================================================
 # STYLES
