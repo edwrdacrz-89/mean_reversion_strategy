@@ -235,6 +235,43 @@ def is_market_holiday(check_date=None):
 
     return check_date in holidays
 
+def get_early_close_days(year):
+    """Get days when NYSE closes at 1 PM ET instead of 4 PM."""
+    days = []
+
+    # Day before Independence Day (July 3, unless it falls on weekend/holiday)
+    july4 = date(year, 7, 4)
+    if july4.weekday() == 0:    # July 4 Monday (holiday) -> July 1 Friday early close
+        days.append(date(year, 7, 1))
+    elif july4.weekday() == 5:  # July 4 Saturday (observed Fri Jul 3 = holiday) -> Thu Jul 2 early close
+        days.append(date(year, 7, 2))
+    elif july4.weekday() == 6:  # July 4 Sunday (observed Mon Jul 5 = holiday) -> Fri Jul 2 early close
+        days.append(date(year, 7, 2))
+    else:                       # July 4 is Tue-Fri -> July 3 early close
+        days.append(date(year, 7, 3))
+
+    # Black Friday (day after Thanksgiving = 4th Friday of November)
+    nov1 = date(year, 11, 1)
+    days_until_thursday = (3 - nov1.weekday()) % 7
+    first_thursday = nov1 + timedelta(days=days_until_thursday)
+    thanksgiving = first_thursday + timedelta(weeks=3)
+    days.append(thanksgiving + timedelta(days=1))  # Friday after Thanksgiving
+
+    # Christmas Eve (Dec 24, only if it's a weekday and not already a holiday)
+    xmas_eve = date(year, 12, 24)
+    if xmas_eve.weekday() < 5:  # Weekday
+        days.append(xmas_eve)
+
+    return days
+
+def is_early_close_day(check_date=None):
+    """Check if today is an early close day (market closes at 1 PM ET)."""
+    if check_date is None:
+        check_date = date.today()
+    elif isinstance(check_date, datetime):
+        check_date = check_date.date()
+    return check_date in get_early_close_days(check_date.year)
+
 def get_prices(tickers):
     """Get historical prices."""
     end_date = datetime.now()
