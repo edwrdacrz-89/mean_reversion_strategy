@@ -14,7 +14,7 @@ EXECUTION RULES (GUARDRAILS):
 1. TIMING:
    - Signals generated at 3:45 PM ET (15 minutes before market close)
    - All orders are Market-On-Close (MOC) orders
-   - GitHub Actions runs at 19:45 & 20:45 UTC to handle DST year-round
+   - Railway cron runs at 16:45/17:45/19:45/20:45 UTC to handle DST + early close days
 
 2. DAILY WORKFLOW:
    - Step 1: SELL all existing positions (MOC)

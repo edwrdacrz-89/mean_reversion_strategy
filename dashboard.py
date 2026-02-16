@@ -324,7 +324,7 @@ def show_technical_details():
 
         st.subheader("4. Signal Criteria")
         st.markdown("""
-        - Universe: 125 stocks (Power Universe)
+        - Universe: 68 stocks (Power Universe)
         - Min Consistency (C): 55%
         - Min Drop: 0.20% from previous close
         """)
@@ -383,14 +383,15 @@ def show_technical_details():
 
     st.header("Universe Selection")
     st.markdown("""
-    125 stocks from industries with structural ties to government and critical infrastructure:
-    - **Defense & Aerospace** - Government contracts
-    - **Financials** - Systemic infrastructure
-    - **Semiconductors** - Critical supply chain
-    - **Software & IT Services** - Enterprise/government
-    - **Insurance & Credit** - Regulated, stable demand
-    - **Industrial Machinery** - Infrastructure spending
-    - **Building & Construction** - Housing, infrastructure
+    68 stocks from industries with structural ties to government and critical infrastructure:
+    - **Aerospace & Defense** - DoD contracts, classified programs
+    - **Big Banks** - Too-big-to-fail, Fed backstop
+    - **Insurance** - State-regulated, mandated products
+    - **Managed Healthcare** - Medicare/Medicaid contracts
+    - **Government IT** - Federal contracts
+    - **Utilities** - Rate-setting monopolies, regulated territories
+    - **Telecom** - FCC licensed, government contracts
+    - **Waste & Infrastructure** - Municipal contracts
     """)
 
     st.header("Important Warnings")
