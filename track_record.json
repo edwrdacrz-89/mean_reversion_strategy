@@ -1,5 +1,32 @@
 {
-  "entries": [],
+  "entries": [
+    {
+      "date": "2026-02-17",
+      "signals": [
+        {
+          "ticker": "EVRG",
+          "price": 81.55000305175781,
+          "drop_pct": 1.3786423461001054,
+          "score": 0.1857097796015028,
+          "consistency": 0.7181818181818181
+        },
+        {
+          "ticker": "CMS",
+          "price": 76.1449966430664,
+          "drop_pct": 0.7753469341494951,
+          "score": 0.16554488622813845,
+          "consistency": 0.6
+        },
+        {
+          "ticker": "NEE",
+          "price": 93.0999984741211,
+          "drop_pct": 0.746273512646331,
+          "score": 0.16717448347526867,
+          "consistency": 0.556390977443609
+        }
+      ]
+    }
+  ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": 0,
