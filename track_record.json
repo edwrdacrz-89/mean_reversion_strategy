@@ -24,15 +24,63 @@
           "score": 0.16717448347526867,
           "consistency": 0.556390977443609
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EVRG",
+          "entry_price": 81.51000213623047,
+          "exit_price": 80.47000122070312,
+          "return_pct": -1.275918155159847
+        },
+        {
+          "ticker": "CMS",
+          "entry_price": 76.04000091552734,
+          "exit_price": 75.16000366210938,
+          "return_pct": -1.1572820131808725
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 92.70999908447266,
+          "exit_price": 90.83499908447266,
+          "return_pct": -2.022435571692321
+        }
+      ],
+      "daily_return": -1.4852119133443467,
+      "portfolio_return": -1.4852119133443467
+    },
+    {
+      "date": "2026-02-18",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 90.83499908447266,
+          "drop_pct": 2.022435571692321,
+          "score": 0.18064708202910099,
+          "consistency": 0.556390977443609
+        },
+        {
+          "ticker": "ES",
+          "price": 71.7300033569336,
+          "drop_pct": 1.7800841354139723,
+          "score": 0.20099196391285176,
+          "consistency": 0.5983606557377049
+        },
+        {
+          "ticker": "EME",
+          "price": 785.5650024414062,
+          "drop_pct": 1.496551418005486,
+          "score": 0.297050198922911,
+          "consistency": 0.616
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0,
-    "total_trades": 0,
+    "total_return": -1.4852119133443438,
+    "total_trades": 3,
     "wins": 0,
-    "win_rate": 0,
-    "portfolio_value": 100.0
+    "win_rate": 0.0,
+    "portfolio_value": 98.51478808665566
   }
 }
