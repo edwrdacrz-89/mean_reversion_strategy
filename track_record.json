@@ -120,15 +120,63 @@
           "score": 0.2718738544857195,
           "consistency": 0.6239316239316239
         }
+      ],
+      "returns": [
+        {
+          "ticker": "MET",
+          "entry_price": 78.0999984741211,
+          "exit_price": 78.84500122070312,
+          "return_pct": 0.9539087850672525
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 57.88999938964844,
+          "exit_price": 58.55500030517578,
+          "return_pct": 1.1487319442712853
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 528.6599731445312,
+          "exit_price": 532.8400268554688,
+          "return_pct": 0.7906885187607552
+        }
+      ],
+      "daily_return": 0.9644430826997644,
+      "portfolio_return": 0.9644430826997644
+    },
+    {
+      "date": "2026-02-20",
+      "signals": [
+        {
+          "ticker": "NOC",
+          "price": 722.2100219726562,
+          "drop_pct": 1.9894924805833374,
+          "score": 0.15924821878055656,
+          "consistency": 0.5692307692307692
+        },
+        {
+          "ticker": "ED",
+          "price": 109.9000015258789,
+          "drop_pct": 1.8048576448484066,
+          "score": 0.1080649044959491,
+          "consistency": 0.5746268656716418
+        },
+        {
+          "ticker": "ELV",
+          "price": 343.54998779296875,
+          "drop_pct": 1.3297733873881359,
+          "score": 0.15030826470769007,
+          "consistency": 0.5507246376811594
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.172155478975057,
-    "total_trades": 6,
-    "wins": 3,
-    "win_rate": 50.0,
-    "portfolio_value": 100.17215547897506
+    "total_return": 1.1382589032832868,
+    "total_trades": 9,
+    "wins": 6,
+    "win_rate": 66.66666666666666,
+    "portfolio_value": 101.13825890328329
   }
 }
