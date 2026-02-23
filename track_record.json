@@ -168,15 +168,63 @@
           "score": 0.15030826470769007,
           "consistency": 0.5507246376811594
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 723.5599975585938,
+          "exit_price": 726.8200073242188,
+          "return_pct": 0.45055140923002795
+        },
+        {
+          "ticker": "ED",
+          "entry_price": 109.80999755859375,
+          "exit_price": 111.5999984741211,
+          "return_pct": 1.6300892043752333
+        },
+        {
+          "ticker": "ELV",
+          "entry_price": 342.92999267578125,
+          "exit_price": 337.1117858886719,
+          "return_pct": -1.696616484814183
+        }
+      ],
+      "daily_return": 0.1280080429303594,
+      "portfolio_return": 0.1280080429303594
+    },
+    {
+      "date": "2026-02-23",
+      "signals": [
+        {
+          "ticker": "MET",
+          "price": 74.78500366210938,
+          "drop_pct": 5.455113647598163,
+          "score": 0.18354090340386306,
+          "consistency": 0.6240601503759399
+        },
+        {
+          "ticker": "PNC",
+          "price": 221.13499450683594,
+          "drop_pct": 5.080056080978145,
+          "score": 0.15116654169279453,
+          "consistency": 0.562962962962963
+        },
+        {
+          "ticker": "USB",
+          "price": 55.8650016784668,
+          "drop_pct": 4.764742884786453,
+          "score": 0.20099290632077899,
+          "consistency": 0.5789473684210527
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.1382589032832868,
-    "total_trades": 9,
-    "wins": 6,
+    "total_return": 1.267724009159224,
+    "total_trades": 12,
+    "wins": 8,
     "win_rate": 66.66666666666666,
-    "portfolio_value": 101.13825890328329
+    "portfolio_value": 101.26772400915922
   }
 }
