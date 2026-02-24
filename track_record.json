@@ -216,15 +216,63 @@
           "score": 0.20099290632077899,
           "consistency": 0.5789473684210527
         }
+      ],
+      "returns": [
+        {
+          "ticker": "MET",
+          "entry_price": 75.23999786376953,
+          "exit_price": 75.43000030517578,
+          "return_pct": 0.2525285045199905
+        },
+        {
+          "ticker": "PNC",
+          "entry_price": 220.77000427246094,
+          "exit_price": 217.6699981689453,
+          "return_pct": -1.4041790295432461
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 55.810001373291016,
+          "exit_price": 55.06999969482422,
+          "return_pct": -1.325930228019918
+        }
+      ],
+      "daily_return": -0.8258602510143911,
+      "portfolio_return": -0.8258602510143911
+    },
+    {
+      "date": "2026-02-24",
+      "signals": [
+        {
+          "ticker": "CNC",
+          "price": 42.06999969482422,
+          "drop_pct": 2.930319458450298,
+          "score": 0.11193191216730149,
+          "consistency": 0.5642857142857143
+        },
+        {
+          "ticker": "HCA",
+          "price": 526.02001953125,
+          "drop_pct": 1.856438180449162,
+          "score": 0.25975943854059735,
+          "consistency": 0.6206896551724138
+        },
+        {
+          "ticker": "RTX",
+          "price": 198.6826934814453,
+          "drop_pct": 1.603261052325964,
+          "score": 0.11570925528617022,
+          "consistency": 0.575
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.267724009159224,
-    "total_trades": 12,
-    "wins": 8,
-    "win_rate": 66.66666666666666,
-    "portfolio_value": 101.26772400915922
+    "total_return": 0.43139412946062805,
+    "total_trades": 15,
+    "wins": 9,
+    "win_rate": 60.0,
+    "portfolio_value": 100.43139412946063
   }
 }
