@@ -264,15 +264,63 @@
           "score": 0.11570925528617022,
           "consistency": 0.575
         }
+      ],
+      "returns": [
+        {
+          "ticker": "CNC",
+          "entry_price": 42.369998931884766,
+          "exit_price": 42.875,
+          "return_pct": 1.191883598881106
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 526.52001953125,
+          "exit_price": 540.4849853515625,
+          "return_pct": 2.6523143094815698
+        },
+        {
+          "ticker": "RTX",
+          "entry_price": 198.4600067138672,
+          "exit_price": 195.93499755859375,
+          "return_pct": -1.2723012545867283
+        }
+      ],
+      "daily_return": 0.8572988845919826,
+      "portfolio_return": 0.8572988845919826
+    },
+    {
+      "date": "2026-02-25",
+      "signals": [
+        {
+          "ticker": "NOC",
+          "price": 704.75,
+          "drop_pct": 3.1577619564261994,
+          "score": 0.15594811193140445,
+          "consistency": 0.5692307692307692
+        },
+        {
+          "ticker": "GD",
+          "price": 343.5450134277344,
+          "drop_pct": 2.174092888912294,
+          "score": 0.1487460891852629,
+          "consistency": 0.5757575757575758
+        },
+        {
+          "ticker": "PWR",
+          "price": 563.780029296875,
+          "drop_pct": 0.7796400106428311,
+          "score": 0.33250173887532575,
+          "consistency": 0.5801526717557252
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.43139412946062805,
-    "total_trades": 15,
-    "wins": 9,
-    "win_rate": 60.0,
-    "portfolio_value": 100.43139412946063
+    "total_return": 1.29239135111267,
+    "total_trades": 18,
+    "wins": 11,
+    "win_rate": 61.111111111111114,
+    "portfolio_value": 101.29239135111267
   }
 }
