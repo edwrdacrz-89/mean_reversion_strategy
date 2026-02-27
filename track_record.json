@@ -360,15 +360,63 @@
           "score": 0.28065907649139127,
           "consistency": 0.6293103448275862
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EME",
+          "entry_price": 746.1799926757812,
+          "exit_price": 725.5449829101562,
+          "return_pct": -2.7654198676151065
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 91.98999786376953,
+          "exit_price": 93.86000061035156,
+          "return_pct": 2.0328326883444094
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 525.8800048828125,
+          "exit_price": 530.4199829101562,
+          "return_pct": 0.8633106383946737
+        }
+      ],
+      "daily_return": 0.04357448637465888,
+      "portfolio_return": 0.04357448637465888
+    },
+    {
+      "date": "2026-02-27",
+      "signals": [
+        {
+          "ticker": "MET",
+          "price": 72.23999786376953,
+          "drop_pct": 4.87227345099385,
+          "score": 0.1912831303622915,
+          "consistency": 0.6296296296296297
+        },
+        {
+          "ticker": "PNC",
+          "price": 212.30999755859375,
+          "drop_pct": 4.716816004018974,
+          "score": 0.15405839552508419,
+          "consistency": 0.5620437956204379
+        },
+        {
+          "ticker": "USB",
+          "price": 54.630001068115234,
+          "drop_pct": 4.5930795153882,
+          "score": 0.2032208461874952,
+          "consistency": 0.5777777777777777
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.4408623214796563,
-    "total_trades": 21,
-    "wins": 14,
+    "total_return": 2.4855004010740203,
+    "total_trades": 24,
+    "wins": 16,
     "win_rate": 66.66666666666666,
-    "portfolio_value": 102.44086232147966
+    "portfolio_value": 102.48550040107402
   }
 }
