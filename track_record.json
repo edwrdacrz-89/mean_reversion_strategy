@@ -456,15 +456,63 @@
           "score": 0.1714867433329518,
           "consistency": 0.5725190839694656
         }
+      ],
+      "returns": [
+        {
+          "ticker": "ES",
+          "entry_price": 74.41999816894531,
+          "exit_price": 74.86000061035156,
+          "return_pct": 0.5912422093956171
+        },
+        {
+          "ticker": "PEG",
+          "entry_price": 84.5,
+          "exit_price": 84.22000122070312,
+          "return_pct": -0.3313595021264793
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 92.70999908447266,
+          "exit_price": 92.87000274658203,
+          "return_pct": 0.17258511885388733
+        }
+      ],
+      "daily_return": 0.14415594204100837,
+      "portfolio_return": 0.14415594204100837
+    },
+    {
+      "date": "2026-03-03",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 566.5449829101562,
+          "drop_pct": 1.0678221843927729,
+          "score": 0.3833256218820695,
+          "consistency": 0.6
+        },
+        {
+          "ticker": "BK",
+          "price": 118.20500183105469,
+          "drop_pct": 1.058842702538806,
+          "score": 0.21480042856989967,
+          "consistency": 0.6581196581196581
+        },
+        {
+          "ticker": "MET",
+          "price": 72.62000274658203,
+          "drop_pct": 0.846525307579508,
+          "score": 0.20583536348238077,
+          "consistency": 0.6343283582089553
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.5414520198680606,
-    "total_trades": 27,
-    "wins": 19,
-    "win_rate": 70.37037037037037,
-    "portfolio_value": 103.54145201986806
+    "total_return": 3.6907131754302327,
+    "total_trades": 30,
+    "wins": 21,
+    "win_rate": 70.0,
+    "portfolio_value": 103.69071317543023
   }
 }
