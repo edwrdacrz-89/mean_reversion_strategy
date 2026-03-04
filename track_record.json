@@ -504,15 +504,63 @@
           "score": 0.20583536348238077,
           "consistency": 0.6343283582089553
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PWR",
+          "entry_price": 566.0,
+          "exit_price": 569.1099853515625,
+          "return_pct": 0.5494673766011484
+        },
+        {
+          "ticker": "BK",
+          "entry_price": 117.94999694824219,
+          "exit_price": 118.94000244140625,
+          "return_pct": 0.8393433817539548
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 72.66999816894531,
+          "exit_price": 73.69999694824219,
+          "return_pct": 1.417364531786975
+        }
+      ],
+      "daily_return": 0.9353917633806926,
+      "portfolio_return": 0.9353917633806926
+    },
+    {
+      "date": "2026-03-04",
+      "signals": [
+        {
+          "ticker": "CB",
+          "price": 335.29998779296875,
+          "drop_pct": 0.8867869075525732,
+          "score": 0.09160088549472542,
+          "consistency": 0.5620437956204379
+        },
+        {
+          "ticker": "TDG",
+          "price": 1316.6199951171875,
+          "drop_pct": 0.7328415755845379,
+          "score": 0.1485196740159738,
+          "consistency": 0.5793650793650794
+        },
+        {
+          "ticker": "AIZ",
+          "price": 231.82749938964844,
+          "drop_pct": 0.4562239695927563,
+          "score": 0.09065745201407957,
+          "consistency": 0.6015625
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.6907131754302327,
-    "total_trades": 30,
-    "wins": 21,
-    "win_rate": 70.0,
-    "portfolio_value": 103.69071317543023
+    "total_return": 4.660627565863905,
+    "total_trades": 33,
+    "wins": 24,
+    "win_rate": 72.72727272727273,
+    "portfolio_value": 104.6606275658639
   }
 }
