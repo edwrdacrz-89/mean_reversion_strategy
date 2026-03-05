@@ -552,15 +552,63 @@
           "score": 0.09065745201407957,
           "consistency": 0.6015625
         }
+      ],
+      "returns": [
+        {
+          "ticker": "CB",
+          "entry_price": 334.1400146484375,
+          "exit_price": 333.45989990234375,
+          "return_pct": -0.2035418436218502
+        },
+        {
+          "ticker": "TDG",
+          "entry_price": 1315.1199951171875,
+          "exit_price": 1295.449951171875,
+          "return_pct": -1.495684349591213
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 231.9499969482422,
+          "exit_price": 227.26499938964844,
+          "return_pct": -2.0198308343324403
+        }
+      ],
+      "daily_return": -1.239685675848501,
+      "portfolio_return": -1.239685675848501
+    },
+    {
+      "date": "2026-03-05",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 546.635009765625,
+          "drop_pct": 3.825784674052853,
+          "score": 0.3685812969836112,
+          "consistency": 0.6046511627906976
+        },
+        {
+          "ticker": "EME",
+          "price": 718.8499755859375,
+          "drop_pct": 2.972184010201003,
+          "score": 0.2532492979604175,
+          "consistency": 0.6209677419354839
+        },
+        {
+          "ticker": "ES",
+          "price": 73.70999908447266,
+          "drop_pct": 2.13754728740685,
+          "score": 0.21899611681405515,
+          "consistency": 0.6198347107438017
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 4.660627565863905,
-    "total_trades": 33,
+    "total_return": 3.363164757676742,
+    "total_trades": 36,
     "wins": 24,
-    "win_rate": 72.72727272727273,
-    "portfolio_value": 104.6606275658639
+    "win_rate": 66.66666666666666,
+    "portfolio_value": 103.36316475767674
   }
 }
