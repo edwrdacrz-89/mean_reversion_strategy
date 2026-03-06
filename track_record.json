@@ -600,15 +600,63 @@
           "score": 0.21899611681405515,
           "consistency": 0.6198347107438017
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PWR",
+          "entry_price": 549.219970703125,
+          "exit_price": 541.0,
+          "return_pct": -1.4966627474601095
+        },
+        {
+          "ticker": "EME",
+          "entry_price": 719.010009765625,
+          "exit_price": 703.60498046875,
+          "return_pct": -2.142533356649174
+        },
+        {
+          "ticker": "ES",
+          "entry_price": 73.87000274658203,
+          "exit_price": 74.61000061035156,
+          "return_pct": 1.0017569192574194
+        }
+      ],
+      "daily_return": -0.8791463949506214,
+      "portfolio_return": -0.8791463949506214
+    },
+    {
+      "date": "2026-03-06",
+      "signals": [
+        {
+          "ticker": "USB",
+          "price": 52.18000030517578,
+          "drop_pct": 3.2090512838674674,
+          "score": 0.1988268635533329,
+          "consistency": 0.5693430656934306
+        },
+        {
+          "ticker": "EME",
+          "price": 703.60498046875,
+          "drop_pct": 2.142533356649174,
+          "score": 0.251223796774419,
+          "consistency": 0.616
+        },
+        {
+          "ticker": "MET",
+          "price": 71.76499938964844,
+          "drop_pct": 1.6109172092525075,
+          "score": 0.20663216896323358,
+          "consistency": 0.6296296296296297
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.363164757676742,
-    "total_trades": 36,
-    "wins": 24,
-    "win_rate": 66.66666666666666,
-    "portfolio_value": 103.36316475767674
+    "total_return": 2.4544512210027563,
+    "total_trades": 39,
+    "wins": 25,
+    "win_rate": 64.1025641025641,
+    "portfolio_value": 102.45445122100276
   }
 }
