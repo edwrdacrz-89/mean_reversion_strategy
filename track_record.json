@@ -648,15 +648,63 @@
           "score": 0.20663216896323358,
           "consistency": 0.6296296296296297
         }
+      ],
+      "returns": [
+        {
+          "ticker": "USB",
+          "entry_price": 52.369998931884766,
+          "exit_price": 52.13999938964844,
+          "return_pct": -0.43918187307102663
+        },
+        {
+          "ticker": "EME",
+          "entry_price": 705.7899780273438,
+          "exit_price": 716.9299926757812,
+          "return_pct": 1.5783752950946428
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 71.83000183105469,
+          "exit_price": 71.0199966430664,
+          "return_pct": -1.1276697303912457
+        }
+      ],
+      "daily_return": 0.0038412305441234786,
+      "portfolio_return": 0.0038412305441234786
+    },
+    {
+      "date": "2026-03-09",
+      "signals": [
+        {
+          "ticker": "MET",
+          "price": 71.0199966430664,
+          "drop_pct": 1.1276697303912457,
+          "score": 0.19359356843177394,
+          "consistency": 0.6222222222222222
+        },
+        {
+          "ticker": "NOC",
+          "price": 747.9600219726562,
+          "drop_pct": 1.0804997629240305,
+          "score": 0.18711336277203727,
+          "consistency": 0.5813953488372093
+        },
+        {
+          "ticker": "GD",
+          "price": 361.32501220703125,
+          "drop_pct": 0.5956087060190549,
+          "score": 0.16623882508100576,
+          "consistency": 0.5801526717557252
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.4544512210027563,
-    "total_trades": 39,
-    "wins": 25,
-    "win_rate": 64.1025641025641,
-    "portfolio_value": 102.45445122100276
+    "total_return": 2.4583867326768853,
+    "total_trades": 42,
+    "wins": 26,
+    "win_rate": 61.904761904761905,
+    "portfolio_value": 102.45838673267689
   }
 }
