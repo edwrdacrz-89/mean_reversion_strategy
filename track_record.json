@@ -744,15 +744,63 @@
           "score": 0.3071078852995622,
           "consistency": 0.6347826086956522
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 734.97998046875,
+          "exit_price": 735.5900268554688,
+          "return_pct": 0.0830017691542672
+        },
+        {
+          "ticker": "EVRG",
+          "entry_price": 81.93000030517578,
+          "exit_price": 81.03500366210938,
+          "return_pct": -1.0923918463721358
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 537.6400146484375,
+          "exit_price": 536.0850219726562,
+          "return_pct": -0.2892256218685767
+        }
+      ],
+      "daily_return": -0.43287189969548173,
+      "portfolio_return": -0.43287189969548173
+    },
+    {
+      "date": "2026-03-11",
+      "signals": [
+        {
+          "ticker": "EVRG",
+          "price": 81.03500366210938,
+          "drop_pct": 1.0923918463721358,
+          "score": 0.16014866846190834,
+          "consistency": 0.6846846846846847
+        },
+        {
+          "ticker": "MET",
+          "price": 69.98999786376953,
+          "drop_pct": 0.8640235460842997,
+          "score": 0.18024614843274522,
+          "consistency": 0.6131386861313869
+        },
+        {
+          "ticker": "GD",
+          "price": 353.1600036621094,
+          "drop_pct": 0.6833692457062851,
+          "score": 0.1536514831584704,
+          "consistency": 0.5714285714285714
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.5397488851843093,
-    "total_trades": 45,
-    "wins": 27,
-    "win_rate": 60.0,
-    "portfolio_value": 101.53974888518431
+    "total_return": 1.100211845238988,
+    "total_trades": 48,
+    "wins": 28,
+    "win_rate": 58.333333333333336,
+    "portfolio_value": 101.10021184523899
   }
 }
