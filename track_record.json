@@ -888,15 +888,63 @@
           "score": 0.18475169853409668,
           "consistency": 0.5693430656934306
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PWR",
+          "entry_price": 559.02001953125,
+          "exit_price": 574.635009765625,
+          "return_pct": 2.793279254554872
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 67.97000122070312,
+          "exit_price": 69.16999816894531,
+          "return_pct": 1.7654802511268424
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 51.0,
+          "exit_price": 51.099998474121094,
+          "return_pct": 0.196075439453125
+        }
+      ],
+      "daily_return": 1.5849449817116132,
+      "portfolio_return": 1.5849449817116132
+    },
+    {
+      "date": "2026-03-16",
+      "signals": [
+        {
+          "ticker": "MOH",
+          "price": 146.72999572753906,
+          "drop_pct": 1.6554968305796776,
+          "score": -0.08424484581746904,
+          "consistency": 0.5588235294117647
+        },
+        {
+          "ticker": "HCA",
+          "price": 527.3250122070312,
+          "drop_pct": 1.0591513230373173,
+          "score": 0.2853956537959626,
+          "consistency": 0.6239316239316239
+        },
+        {
+          "ticker": "BK",
+          "price": 115.30999755859375,
+          "drop_pct": 0.7402949332071684,
+          "score": 0.20737479180596188,
+          "consistency": 0.6440677966101694
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -0.07108520705166654,
-    "total_trades": 54,
-    "wins": 30,
-    "win_rate": 55.55555555555556,
-    "portfolio_value": 99.92891479294833
+    "total_return": 1.5127331132380561,
+    "total_trades": 57,
+    "wins": 33,
+    "win_rate": 57.89473684210527,
+    "portfolio_value": 101.51273311323806
   }
 }
