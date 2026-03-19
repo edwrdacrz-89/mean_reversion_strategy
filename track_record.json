@@ -1032,15 +1032,63 @@
           "score": 0.155389478893134,
           "consistency": 0.6440677966101694
         }
+      ],
+      "returns": [
+        {
+          "ticker": "HCA",
+          "entry_price": 502.04998779296875,
+          "exit_price": 499.29998779296875,
+          "return_pct": -0.547754221066533
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 90.95999908447266,
+          "exit_price": 92.41999816894531,
+          "return_pct": 1.6051001529988864
+        },
+        {
+          "ticker": "BK",
+          "entry_price": 114.66000366210938,
+          "exit_price": 115.05000305175781,
+          "return_pct": 0.34013551124394126
+        }
+      ],
+      "daily_return": 0.4658271477254315,
+      "portfolio_return": 0.4658271477254315
+    },
+    {
+      "date": "2026-03-19",
+      "signals": [
+        {
+          "ticker": "ES",
+          "price": 69.72000122070312,
+          "drop_pct": 4.151768946601264,
+          "score": 0.2330257539516076,
+          "consistency": 0.6260162601626016
+        },
+        {
+          "ticker": "ED",
+          "price": 111.43000030517578,
+          "drop_pct": 1.8497300243995471,
+          "score": 0.1237819328469302,
+          "consistency": 0.5661764705882353
+        },
+        {
+          "ticker": "NOC",
+          "price": 713.3900146484375,
+          "drop_pct": 1.5796605847919536,
+          "score": 0.13792716212921824,
+          "consistency": 0.5725190839694656
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.3082939671992335,
-    "total_trades": 63,
-    "wins": 36,
-    "win_rate": 57.14285714285714,
-    "portfolio_value": 100.30829396719923
+    "total_return": 0.7755572319186825,
+    "total_trades": 66,
+    "wins": 38,
+    "win_rate": 57.57575757575758,
+    "portfolio_value": 100.77555723191868
   }
 }
