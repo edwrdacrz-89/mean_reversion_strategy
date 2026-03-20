@@ -1080,15 +1080,63 @@
           "score": 0.13792716212921824,
           "consistency": 0.5725190839694656
         }
+      ],
+      "returns": [
+        {
+          "ticker": "ES",
+          "entry_price": 69.62000274658203,
+          "exit_price": 66.70999908447266,
+          "return_pct": -4.179838476453149
+        },
+        {
+          "ticker": "ED",
+          "entry_price": 111.69000244140625,
+          "exit_price": 109.06999969482422,
+          "return_pct": -2.3457809018819855
+        },
+        {
+          "ticker": "NOC",
+          "entry_price": 714.1500244140625,
+          "exit_price": 704.4600219726562,
+          "return_pct": -1.3568580984585963
+        }
+      ],
+      "daily_return": -2.6274924922645773,
+      "portfolio_return": -2.6274924922645773
+    },
+    {
+      "date": "2026-03-20",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 552.5599975585938,
+          "drop_pct": 4.393116032903962,
+          "score": 0.41682742255383937,
+          "consistency": 0.6090225563909775
+        },
+        {
+          "ticker": "ES",
+          "price": 66.72000122070312,
+          "drop_pct": 4.165471720009779,
+          "score": 0.23114654173923435,
+          "consistency": 0.6209677419354839
+        },
+        {
+          "ticker": "EME",
+          "price": 720.3900146484375,
+          "drop_pct": 4.118030923514461,
+          "score": 0.24489545659346348,
+          "consistency": 0.6062992125984252
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.7755572319186825,
-    "total_trades": 66,
+    "total_return": -1.8723129683877744,
+    "total_trades": 69,
     "wins": 38,
-    "win_rate": 57.57575757575758,
-    "portfolio_value": 100.77555723191868
+    "win_rate": 55.072463768115945,
+    "portfolio_value": 98.12768703161223
   }
 }
