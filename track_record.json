@@ -1128,15 +1128,63 @@
           "score": 0.24489545659346348,
           "consistency": 0.6062992125984252
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PWR",
+          "entry_price": 555.3900146484375,
+          "exit_price": 567.6749877929688,
+          "return_pct": 2.2119542700650916
+        },
+        {
+          "ticker": "ES",
+          "entry_price": 66.66999816894531,
+          "exit_price": 67.76000213623047,
+          "return_pct": 1.634924249619789
+        },
+        {
+          "ticker": "EME",
+          "entry_price": 724.9299926757812,
+          "exit_price": 749.989990234375,
+          "return_pct": 3.456885190540271
+        }
+      ],
+      "daily_return": 2.4345879034083837,
+      "portfolio_return": 2.4345879034083837
+    },
+    {
+      "date": "2026-03-23",
+      "signals": [
+        {
+          "ticker": "NOC",
+          "price": 684.5499877929688,
+          "drop_pct": 3.16854431392281,
+          "score": 0.1301672491051778,
+          "consistency": 0.5639097744360902
+        },
+        {
+          "ticker": "MOH",
+          "price": 135.8699951171875,
+          "drop_pct": 2.539278711663949,
+          "score": -0.07144542237654766,
+          "consistency": 0.5547445255474452
+        },
+        {
+          "ticker": "RTX",
+          "price": 196.0500030517578,
+          "drop_pct": 1.0647964126753902,
+          "score": 0.11405739816841107,
+          "consistency": 0.5725806451612904
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -1.8723129683877744,
-    "total_trades": 69,
-    "wins": 38,
-    "win_rate": 55.072463768115945,
-    "portfolio_value": 98.12768703161223
+    "total_return": 0.516691829978285,
+    "total_trades": 72,
+    "wins": 41,
+    "win_rate": 56.94444444444444,
+    "portfolio_value": 100.51669182997828
   }
 }
