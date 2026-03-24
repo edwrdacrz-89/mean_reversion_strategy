@@ -1176,15 +1176,63 @@
           "score": 0.11405739816841107,
           "consistency": 0.5725806451612904
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 680.0,
+          "exit_price": 681.4450073242188,
+          "return_pct": 0.21250107709099264
+        },
+        {
+          "ticker": "MOH",
+          "entry_price": 135.24000549316406,
+          "exit_price": 140.82000732421875,
+          "return_pct": 4.125999411717517
+        },
+        {
+          "ticker": "RTX",
+          "entry_price": 194.82000732421875,
+          "exit_price": 194.17999267578125,
+          "return_pct": -0.32851587330678517
+        }
+      ],
+      "daily_return": 1.336661538500575,
+      "portfolio_return": 1.336661538500575
+    },
+    {
+      "date": "2026-03-24",
+      "signals": [
+        {
+          "ticker": "IBM",
+          "price": 241.42999267578125,
+          "drop_pct": 2.8216107296482122,
+          "score": 0.1436684746419969,
+          "consistency": 0.5522388059701493
+        },
+        {
+          "ticker": "HCA",
+          "price": 488.45001220703125,
+          "drop_pct": 1.239430331121717,
+          "score": 0.24007729363558494,
+          "consistency": 0.6033057851239669
+        },
+        {
+          "ticker": "CINF",
+          "price": 158.67999267578125,
+          "drop_pct": 0.9426367080413313,
+          "score": 0.055739286353498174,
+          "consistency": 0.5703703703703704
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.516691829978285,
-    "total_trades": 72,
-    "wins": 41,
-    "win_rate": 56.94444444444444,
-    "portfolio_value": 100.51669182997828
+    "total_return": 1.8602597894427646,
+    "total_trades": 75,
+    "wins": 43,
+    "win_rate": 57.333333333333336,
+    "portfolio_value": 101.86025978944276
   }
 }
