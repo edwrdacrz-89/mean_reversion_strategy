@@ -1224,15 +1224,63 @@
           "score": 0.055739286353498174,
           "consistency": 0.5703703703703704
         }
+      ],
+      "returns": [
+        {
+          "ticker": "IBM",
+          "entry_price": 240.58999633789062,
+          "exit_price": 240.92999267578125,
+          "return_pct": 0.14131773684103044
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 485.7200012207031,
+          "exit_price": 484.0199890136719,
+          "return_pct": -0.34999839470452293
+        },
+        {
+          "ticker": "CINF",
+          "entry_price": 158.27000427246094,
+          "exit_price": 155.86000061035156,
+          "return_pct": -1.5227166216288002
+        }
+      ],
+      "daily_return": -0.5771324264974309,
+      "portfolio_return": -0.5771324264974309
+    },
+    {
+      "date": "2026-03-25",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 574.5399780273438,
+          "drop_pct": 0.674231449692582,
+          "score": 0.4321123190870288,
+          "consistency": 0.6119402985074627
+        },
+        {
+          "ticker": "HCA",
+          "price": 484.0199890136719,
+          "drop_pct": 0.34999839470452293,
+          "score": 0.23810911346939637,
+          "consistency": 0.5983606557377049
+        },
+        {
+          "ticker": "ES",
+          "price": 67.23999786376953,
+          "drop_pct": 0.34089721768526865,
+          "score": 0.20841877471586054,
+          "consistency": 0.616
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.8602597894427646,
-    "total_trades": 75,
-    "wins": 43,
-    "win_rate": 57.333333333333336,
-    "portfolio_value": 101.86025978944276
+    "total_return": 1.2723912004833693,
+    "total_trades": 78,
+    "wins": 44,
+    "win_rate": 56.41025641025641,
+    "portfolio_value": 101.27239120048337
   }
 }
