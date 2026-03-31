@@ -1416,15 +1416,63 @@
           "score": 0.13583416765368814,
           "consistency": 0.5703703703703704
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EME",
+          "entry_price": 701.0999755859375,
+          "exit_price": 739.77001953125,
+          "return_pct": 5.515624774197772
+        },
+        {
+          "ticker": "PWR",
+          "entry_price": 533.780029296875,
+          "exit_price": 549.5999755859375,
+          "return_pct": 2.9637576193889124
+        },
+        {
+          "ticker": "GD",
+          "entry_price": 340.7900085449219,
+          "exit_price": 345.04998779296875,
+          "return_pct": 1.2500305587701341
+        }
+      ],
+      "daily_return": 3.2431376507856062,
+      "portfolio_return": 3.2431376507856062
+    },
+    {
+      "date": "2026-03-31",
+      "signals": [
+        {
+          "ticker": "RSG",
+          "price": 219.375,
+          "drop_pct": 1.0397838108703044,
+          "score": 0.08669913499317004,
+          "consistency": 0.5588235294117647
+        },
+        {
+          "ticker": "DUK",
+          "price": 130.86000061035156,
+          "drop_pct": 0.6453618253639732,
+          "score": 0.06707123594413757,
+          "consistency": 0.5606060606060606
+        },
+        {
+          "ticker": "ED",
+          "price": 112.9000015258789,
+          "drop_pct": 0.4321349910989275,
+          "score": 0.09526035451700743,
+          "consistency": 0.5703703703703704
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -1.067317249916755,
-    "total_trades": 87,
-    "wins": 48,
-    "win_rate": 55.172413793103445,
-    "portfolio_value": 98.93268275008325
+    "total_return": 2.141205833283479,
+    "total_trades": 90,
+    "wins": 51,
+    "win_rate": 56.666666666666664,
+    "portfolio_value": 102.14120583328348
   }
 }
