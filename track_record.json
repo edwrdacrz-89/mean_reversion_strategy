@@ -1464,15 +1464,63 @@
           "score": 0.09526035451700743,
           "consistency": 0.5703703703703704
         }
+      ],
+      "returns": [
+        {
+          "ticker": "RSG",
+          "entry_price": 219.02000427246094,
+          "exit_price": 220.19000244140625,
+          "return_pct": 0.5341969437137963
+        },
+        {
+          "ticker": "DUK",
+          "entry_price": 130.94000244140625,
+          "exit_price": 131.0500030517578,
+          "return_pct": 0.08400840713347793
+        },
+        {
+          "ticker": "ED",
+          "entry_price": 113.18000030517578,
+          "exit_price": 113.95999908447266,
+          "return_pct": 0.6891666170645921
+        }
+      ],
+      "daily_return": 0.43579065597062216,
+      "portfolio_return": 0.43579065597062216
+    },
+    {
+      "date": "2026-04-01",
+      "signals": [
+        {
+          "ticker": "T",
+          "price": 28.264999389648438,
+          "drop_pct": 2.500863701944634,
+          "score": 0.12931921079450676,
+          "consistency": 0.5658914728682171
+        },
+        {
+          "ticker": "ALL",
+          "price": 204.39999389648438,
+          "drop_pct": 1.4179620398059085,
+          "score": 0.09553770918598084,
+          "consistency": 0.5683453237410072
+        },
+        {
+          "ticker": "AIZ",
+          "price": 216.9499969482422,
+          "drop_pct": 0.39483982369551746,
+          "score": 0.09126360115550086,
+          "consistency": 0.6030534351145038
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.141205833283479,
-    "total_trades": 90,
-    "wins": 51,
-    "win_rate": 56.666666666666664,
-    "portfolio_value": 102.14120583328348
+    "total_return": 2.5863276642006383,
+    "total_trades": 93,
+    "wins": 54,
+    "win_rate": 58.06451612903226,
+    "portfolio_value": 102.58632766420064
   }
 }
