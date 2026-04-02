@@ -1512,15 +1512,63 @@
           "score": 0.09126360115550086,
           "consistency": 0.6030534351145038
         }
+      ],
+      "returns": [
+        {
+          "ticker": "T",
+          "entry_price": 28.309999465942383,
+          "exit_price": 28.19499969482422,
+          "return_pct": -0.4062160836721724
+        },
+        {
+          "ticker": "ALL",
+          "entry_price": 204.10000610351562,
+          "exit_price": 206.2899932861328,
+          "return_pct": 1.0729971176514652
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 216.3300018310547,
+          "exit_price": 217.9199981689453,
+          "return_pct": 0.7349865133974114
+        }
+      ],
+      "daily_return": 0.46725584912556806,
+      "portfolio_return": 0.46725584912556806
+    },
+    {
+      "date": "2026-04-02",
+      "signals": [
+        {
+          "ticker": "HCA",
+          "price": 471.3999938964844,
+          "drop_pct": 0.7056358301244076,
+          "score": 0.1719131865921212,
+          "consistency": 0.5853658536585366
+        },
+        {
+          "ticker": "ES",
+          "price": 69.16999816894531,
+          "drop_pct": 0.6891648907649275,
+          "score": 0.2201951093079324,
+          "consistency": 0.6209677419354839
+        },
+        {
+          "ticker": "EME",
+          "price": 755.3250122070312,
+          "drop_pct": 0.5562472060876533,
+          "score": 0.38669608312920434,
+          "consistency": 0.6190476190476191
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.5863276642006383,
-    "total_trades": 93,
-    "wins": 54,
-    "win_rate": 58.06451612903226,
-    "portfolio_value": 102.58632766420064
+    "total_return": 3.0656682806147444,
+    "total_trades": 96,
+    "wins": 56,
+    "win_rate": 58.333333333333336,
+    "portfolio_value": 103.06566828061474
   }
 }
