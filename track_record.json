@@ -1608,15 +1608,63 @@
           "score": 0.10624035545695255,
           "consistency": 0.5661764705882353
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 695.7899780273438,
+          "exit_price": 690.39501953125,
+          "return_pct": -0.7753716877884859
+        },
+        {
+          "ticker": "IBM",
+          "entry_price": 246.74000549316406,
+          "exit_price": 244.67999267578125,
+          "return_pct": -0.8348921016133661
+        },
+        {
+          "ticker": "CB",
+          "entry_price": 326.8999938964844,
+          "exit_price": 326.9049987792969,
+          "return_pct": 0.0015310134310020324
+        }
+      ],
+      "daily_return": -0.53624425865695,
+      "portfolio_return": -0.53624425865695
+    },
+    {
+      "date": "2026-04-07",
+      "signals": [
+        {
+          "ticker": "T",
+          "price": 28.0049991607666,
+          "drop_pct": 1.1122900333759074,
+          "score": 0.13006368258348136,
+          "consistency": 0.5703125
+        },
+        {
+          "ticker": "GD",
+          "price": 347.6099853515625,
+          "drop_pct": 1.075736116365425,
+          "score": 0.14476977825677287,
+          "consistency": 0.5746268656716418
+        },
+        {
+          "ticker": "NOC",
+          "price": 690.39501953125,
+          "drop_pct": 0.7753716877884859,
+          "score": 0.11691612821929137,
+          "consistency": 0.5681818181818182
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.973991188844664,
-    "total_trades": 99,
-    "wins": 58,
-    "win_rate": 58.58585858585859,
-    "portfolio_value": 103.97399118884466
+    "total_return": 3.4164366305979996,
+    "total_trades": 102,
+    "wins": 59,
+    "win_rate": 57.84313725490197,
+    "portfolio_value": 103.416436630598
   }
 }
