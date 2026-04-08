@@ -1656,15 +1656,63 @@
           "score": 0.11691612821929137,
           "consistency": 0.5681818181818182
         }
+      ],
+      "returns": [
+        {
+          "ticker": "T",
+          "entry_price": 28.040000915527344,
+          "exit_price": 27.2450008392334,
+          "return_pct": -2.835235557548461
+        },
+        {
+          "ticker": "GD",
+          "entry_price": 348.42999267578125,
+          "exit_price": 349.5,
+          "return_pct": 0.3070939203601815
+        },
+        {
+          "ticker": "NOC",
+          "entry_price": 690.5,
+          "exit_price": 687.7150268554688,
+          "return_pct": -0.4033270303448588
+        }
+      ],
+      "daily_return": -0.9771562225110461,
+      "portfolio_return": -0.9771562225110461
+    },
+    {
+      "date": "2026-04-08",
+      "signals": [
+        {
+          "ticker": "T",
+          "price": 27.2450008392334,
+          "drop_pct": 2.835235557548461,
+          "score": 0.12346035104556219,
+          "consistency": 0.5658914728682171
+        },
+        {
+          "ticker": "ED",
+          "price": 113.28500366210938,
+          "drop_pct": 1.0265555056453588,
+          "score": 0.07469747416097805,
+          "consistency": 0.5597014925373134
+        },
+        {
+          "ticker": "PRU",
+          "price": 96.66999816894531,
+          "drop_pct": 0.749490087779551,
+          "score": 0.09247248116002194,
+          "consistency": 0.572463768115942
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.4164366305979996,
-    "total_trades": 102,
-    "wins": 59,
-    "win_rate": 57.84313725490197,
-    "portfolio_value": 103.416436630598
+    "total_return": 2.4058964849629234,
+    "total_trades": 105,
+    "wins": 60,
+    "win_rate": 57.14285714285714,
+    "portfolio_value": 102.40589648496292
   }
 }
