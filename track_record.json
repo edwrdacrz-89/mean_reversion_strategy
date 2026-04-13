@@ -1787,15 +1787,63 @@
           "score": 0.16471280064547075,
           "consistency": 0.5588235294117647
         }
+      ],
+      "returns": [
+        {
+          "ticker": "GD",
+          "entry_price": 335.1499938964844,
+          "exit_price": 339.8599853515625,
+          "return_pct": 1.4053383681495366
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 495.4700012207031,
+          "exit_price": 494.05999755859375,
+          "return_pct": -0.2845790176268008
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 55.65999984741211,
+          "exit_price": 56.310001373291016,
+          "return_pct": 1.167807272117928
+        }
+      ],
+      "daily_return": 0.7628555408802212,
+      "portfolio_return": 0.7628555408802212
+    },
+    {
+      "date": "2026-04-13",
+      "signals": [
+        {
+          "ticker": "PEG",
+          "price": 80.83999633789062,
+          "drop_pct": 2.754722712845017,
+          "score": 0.09966378932387752,
+          "consistency": 0.5864661654135338
+        },
+        {
+          "ticker": "ES",
+          "price": 68.25499725341797,
+          "drop_pct": 2.451056077411802,
+          "score": 0.2111888940918585,
+          "consistency": 0.6111111111111112
+        },
+        {
+          "ticker": "NEE",
+          "price": 92.13999938964844,
+          "drop_pct": 2.062077384830448,
+          "score": 0.17756628344683187,
+          "consistency": 0.5692307692307692
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.8982416943616585,
-    "total_trades": 110,
-    "wins": 62,
-    "win_rate": 56.36363636363636,
-    "portfolio_value": 100.89824169436166
+    "total_return": 1.667949521777814,
+    "total_trades": 113,
+    "wins": 64,
+    "win_rate": 56.63716814159292,
+    "portfolio_value": 101.66794952177781
   }
 }
