@@ -1979,15 +1979,63 @@
           "score": 0.16324509924211475,
           "consistency": 0.5967741935483871
         }
+      ],
+      "returns": [
+        {
+          "ticker": "MS",
+          "entry_price": 187.32000732421875,
+          "exit_price": 189.13999938964844,
+          "return_pct": 0.971595128266034
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 55.47999954223633,
+          "exit_price": 56.790000915527344,
+          "return_pct": 2.3612137420688435
+        },
+        {
+          "ticker": "C",
+          "entry_price": 129.33999633789062,
+          "exit_price": 131.86000061035156,
+          "return_pct": 1.9483565361155752
+        }
+      ],
+      "daily_return": 1.7603884688168174,
+      "portfolio_return": 1.7603884688168174
+    },
+    {
+      "date": "2026-04-17",
+      "signals": [
+        {
+          "ticker": "NOC",
+          "price": 665.8350219726562,
+          "drop_pct": 1.030812515014519,
+          "score": 0.1743383250450688,
+          "consistency": 0.5757575757575758
+        },
+        {
+          "ticker": "LHX",
+          "price": 350.07000732421875,
+          "drop_pct": 0.9450769087690997,
+          "score": 0.15521718467890597,
+          "consistency": 0.556390977443609
+        },
+        {
+          "ticker": "DUK",
+          "price": 127.79000091552734,
+          "drop_pct": 0.6530388987005297,
+          "score": 0.06676585980102516,
+          "consistency": 0.5597014925373134
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.2806307581575567,
-    "total_trades": 122,
-    "wins": 68,
-    "win_rate": 55.73770491803278,
-    "portfolio_value": 101.28063075815756
+    "total_return": 3.06356330316909,
+    "total_trades": 125,
+    "wins": 71,
+    "win_rate": 56.8,
+    "portfolio_value": 103.06356330316909
   }
 }
