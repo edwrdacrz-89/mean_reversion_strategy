@@ -2027,15 +2027,63 @@
           "score": 0.06676585980102516,
           "consistency": 0.5597014925373134
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NOC",
+          "entry_price": 665.260009765625,
+          "exit_price": 655.1799926757812,
+          "return_pct": -1.5151996124635536
+        },
+        {
+          "ticker": "LHX",
+          "entry_price": 350.3500061035156,
+          "exit_price": 347.760009765625,
+          "return_pct": -0.7392596811102597
+        },
+        {
+          "ticker": "DUK",
+          "entry_price": 128.02999877929688,
+          "exit_price": 127.91000366210938,
+          "return_pct": -0.09372421958259351
+        }
+      ],
+      "daily_return": -0.7827278377188023,
+      "portfolio_return": -0.7827278377188023
+    },
+    {
+      "date": "2026-04-20",
+      "signals": [
+        {
+          "ticker": "HCA",
+          "price": 479.04998779296875,
+          "drop_pct": 1.8340188948834528,
+          "score": 0.1636820376112465,
+          "consistency": 0.5867768595041323
+        },
+        {
+          "ticker": "NOC",
+          "price": 655.1799926757812,
+          "drop_pct": 1.5151996124635536,
+          "score": 0.16251766313475505,
+          "consistency": 0.5681818181818182
+        },
+        {
+          "ticker": "GD",
+          "price": 331.94219970703125,
+          "drop_pct": 1.2928748185838062,
+          "score": 0.15807117422156183,
+          "consistency": 0.5777777777777777
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.06356330316909,
-    "total_trades": 125,
+    "total_return": 2.2568561026502465,
+    "total_trades": 128,
     "wins": 71,
-    "win_rate": 56.8,
-    "portfolio_value": 103.06356330316909
+    "win_rate": 55.46875,
+    "portfolio_value": 102.25685610265025
   }
 }
