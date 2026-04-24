@@ -2219,15 +2219,63 @@
           "score": 0.14817365724800655,
           "consistency": 0.6014492753623188
         }
+      ],
+      "returns": [
+        {
+          "ticker": "MS",
+          "entry_price": 188.64999389648438,
+          "exit_price": 188.0850067138672,
+          "return_pct": -0.2994896373689819
+        },
+        {
+          "ticker": "C",
+          "entry_price": 128.50999450683594,
+          "exit_price": 128.0198974609375,
+          "return_pct": -0.381368817094119
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 76.05999755859375,
+          "exit_price": 77.5999984741211,
+          "return_pct": 2.0247185971061663
+        }
+      ],
+      "daily_return": 0.4479533808810218,
+      "portfolio_return": 0.4479533808810218
+    },
+    {
+      "date": "2026-04-24",
+      "signals": [
+        {
+          "ticker": "USB",
+          "price": 55.41999816894531,
+          "drop_pct": 2.1366817523356856,
+          "score": 0.2027439068430291,
+          "consistency": 0.5777777777777777
+        },
+        {
+          "ticker": "PWR",
+          "price": 625.0999755859375,
+          "drop_pct": 1.3166245932250245,
+          "score": 0.5174163468768808,
+          "consistency": 0.640625
+        },
+        {
+          "ticker": "NEE",
+          "price": 95.5199966430664,
+          "drop_pct": 0.7584450461647727,
+          "score": 0.2057042035460084,
+          "consistency": 0.5681818181818182
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -1.8943090442684678,
-    "total_trades": 137,
-    "wins": 74,
-    "win_rate": 54.01459854014598,
-    "portfolio_value": 98.10569095573153
+    "total_return": -1.4548412847955916,
+    "total_trades": 140,
+    "wins": 75,
+    "win_rate": 53.57142857142857,
+    "portfolio_value": 98.54515871520441
   }
 }
