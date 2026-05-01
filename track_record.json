@@ -2459,15 +2459,63 @@
           "score": -0.02802273802840556,
           "consistency": 0.5588235294117647
         }
+      ],
+      "returns": [
+        {
+          "ticker": "FE",
+          "entry_price": 47.52000045776367,
+          "exit_price": 47.08000183105469,
+          "return_pct": -0.9259230270842701
+        },
+        {
+          "ticker": "AFL",
+          "entry_price": 113.66999816894531,
+          "exit_price": 112.86499786376953,
+          "return_pct": -0.7081906555319253
+        },
+        {
+          "ticker": "CNC",
+          "entry_price": 53.689998626708984,
+          "exit_price": 53.349998474121094,
+          "return_pct": -0.6332653404441547
+        }
+      ],
+      "daily_return": -0.7557930076867834,
+      "portfolio_return": -0.7557930076867834
+    },
+    {
+      "date": "2026-05-01",
+      "signals": [
+        {
+          "ticker": "PEG",
+          "price": 80.4800033569336,
+          "drop_pct": 1.4450162285791164,
+          "score": 0.1172176295609129,
+          "consistency": 0.5895522388059702
+        },
+        {
+          "ticker": "PNC",
+          "price": 221.22500610351562,
+          "drop_pct": 0.7959613885580157,
+          "score": 0.19956187516933535,
+          "consistency": 0.5851851851851851
+        },
+        {
+          "ticker": "NEE",
+          "price": 97.19000244140625,
+          "drop_pct": 0.7049395498298546,
+          "score": 0.23345665092610496,
+          "consistency": 0.5681818181818182
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 3.1975324998427226,
-    "total_trades": 152,
+    "total_return": 2.417572765103614,
+    "total_trades": 155,
     "wins": 84,
-    "win_rate": 55.26315789473685,
-    "portfolio_value": 103.19753249984272
+    "win_rate": 54.19354838709678,
+    "portfolio_value": 102.41757276510361
   }
 }
