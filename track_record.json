@@ -2555,15 +2555,63 @@
           "score": 0.23170113752781774,
           "consistency": 0.5639097744360902
         }
+      ],
+      "returns": [
+        {
+          "ticker": "C",
+          "entry_price": 125.62999725341797,
+          "exit_price": 128.27999877929688,
+          "return_pct": 2.109370042039708
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 55.2400016784668,
+          "exit_price": 55.6349983215332,
+          "return_pct": 0.7150554508769694
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 95.51000213623047,
+          "exit_price": 96.75,
+          "return_pct": 1.2982911067270873
+        }
+      ],
+      "daily_return": 1.3742388665479215,
+      "portfolio_return": 1.3742388665479215
+    },
+    {
+      "date": "2026-05-05",
+      "signals": [
+        {
+          "ticker": "DTE",
+          "price": 144.5399932861328,
+          "drop_pct": 1.4925390207690292,
+          "score": 0.06412661616930951,
+          "consistency": 0.5702479338842975
+        },
+        {
+          "ticker": "CMS",
+          "price": 75.17500305175781,
+          "drop_pct": 0.6804060946452115,
+          "score": 0.10027389837111411,
+          "consistency": 0.5588235294117647
+        },
+        {
+          "ticker": "PEG",
+          "price": 80.11499786376953,
+          "drop_pct": 0.4164065844380071,
+          "score": 0.12004031147084944,
+          "consistency": 0.5925925925925926
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 1.518109063052691,
-    "total_trades": 158,
-    "wins": 85,
-    "win_rate": 53.79746835443038,
-    "portfolio_value": 101.51810906305269
+    "total_return": 2.913210374381677,
+    "total_trades": 161,
+    "wins": 88,
+    "win_rate": 54.6583850931677,
+    "portfolio_value": 102.91321037438168
   }
 }
