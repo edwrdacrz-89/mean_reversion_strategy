@@ -2603,15 +2603,63 @@
           "score": 0.12004031147084944,
           "consistency": 0.5925925925925926
         }
+      ],
+      "returns": [
+        {
+          "ticker": "DTE",
+          "entry_price": 143.5,
+          "exit_price": 143.27999877929688,
+          "return_pct": -0.15331095519381532
+        },
+        {
+          "ticker": "CMS",
+          "entry_price": 74.93000030517578,
+          "exit_price": 74.2300033569336,
+          "return_pct": -0.9342011816244918
+        },
+        {
+          "ticker": "PEG",
+          "entry_price": 79.7300033569336,
+          "exit_price": 79.55000305175781,
+          "return_pct": -0.2257623198257746
+        }
+      ],
+      "daily_return": -0.4377581522146939,
+      "portfolio_return": -0.4377581522146939
+    },
+    {
+      "date": "2026-05-06",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 95.56500244140625,
+          "drop_pct": 0.7426218809262916,
+          "score": 0.2338943435193871,
+          "consistency": 0.5714285714285714
+        },
+        {
+          "ticker": "HIG",
+          "price": 133.57000732421875,
+          "drop_pct": 0.4323418551276017,
+          "score": 0.11909971254135841,
+          "consistency": 0.582089552238806
+        },
+        {
+          "ticker": "AIZ",
+          "price": 236.44000244140625,
+          "drop_pct": 0.29518299318708,
+          "score": 0.12051513585504355,
+          "consistency": 0.6171875
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.913210374381677,
-    "total_trades": 161,
+    "total_return": 2.4626994062619616,
+    "total_trades": 164,
     "wins": 88,
-    "win_rate": 54.6583850931677,
-    "portfolio_value": 102.91321037438168
+    "win_rate": 53.65853658536586,
+    "portfolio_value": 102.46269940626196
   }
 }
