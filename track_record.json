@@ -2651,15 +2651,63 @@
           "score": 0.12051513585504355,
           "consistency": 0.6171875
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NEE",
+          "entry_price": 95.38999938964844,
+          "exit_price": 93.33999633789062,
+          "return_pct": -2.149075442787219
+        },
+        {
+          "ticker": "HIG",
+          "entry_price": 133.49000549316406,
+          "exit_price": 132.4199981689453,
+          "return_pct": -0.8015636228837704
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 236.61000061035156,
+          "exit_price": 232.7100067138672,
+          "return_pct": -1.6482793991902607
+        }
+      ],
+      "daily_return": -1.5329728216204168,
+      "portfolio_return": -1.5329728216204168
+    },
+    {
+      "date": "2026-05-07",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 749.0449829101562,
+          "drop_pct": 4.609419766486348,
+          "score": 0.635723214968808,
+          "consistency": 0.6428571428571429
+        },
+        {
+          "ticker": "NEE",
+          "price": 93.33000183105469,
+          "drop_pct": 2.159552963386744,
+          "score": 0.23770503339432247,
+          "consistency": 0.5714285714285714
+        },
+        {
+          "ticker": "EME",
+          "price": 925.8900146484375,
+          "drop_pct": 1.89244877897351,
+          "score": 0.4937200384419622,
+          "consistency": 0.6333333333333333
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 2.4626994062619616,
-    "total_trades": 164,
+    "total_return": 0.891974072065338,
+    "total_trades": 167,
     "wins": 88,
-    "win_rate": 53.65853658536586,
-    "portfolio_value": 102.46269940626196
+    "win_rate": 52.69461077844312,
+    "portfolio_value": 100.89197407206534
   }
 }
