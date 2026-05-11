@@ -2747,15 +2747,63 @@
           "score": 0.22450887339102507,
           "consistency": 0.5777777777777777
         }
+      ],
+      "returns": [
+        {
+          "ticker": "C",
+          "entry_price": 125.55000305175781,
+          "exit_price": 125.94000244140625,
+          "return_pct": 0.310632720166212
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 78.08000183105469,
+          "exit_price": 77.77999877929688,
+          "return_pct": -0.3842252109662382
+        },
+        {
+          "ticker": "PNC",
+          "entry_price": 216.85000610351562,
+          "exit_price": 214.44500732421875,
+          "return_pct": -1.1090609691515634
+        }
+      ],
+      "daily_return": -0.3942178199838631,
+      "portfolio_return": -0.3942178199838631
+    },
+    {
+      "date": "2026-05-11",
+      "signals": [
+        {
+          "ticker": "IBM",
+          "price": 223.16000366210938,
+          "drop_pct": 2.872558758060989,
+          "score": 0.11066299600279787,
+          "consistency": 0.5648854961832062
+        },
+        {
+          "ticker": "HCA",
+          "price": 426.0350036621094,
+          "drop_pct": 2.1036785606143376,
+          "score": 0.15880106724650983,
+          "consistency": 0.5793650793650794
+        },
+        {
+          "ticker": "USB",
+          "price": 54.45500183105469,
+          "drop_pct": 1.9358850564984635,
+          "score": 0.22941322375194526,
+          "consistency": 0.5864661654135338
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.5529557227968098,
-    "total_trades": 170,
-    "wins": 89,
-    "win_rate": 52.352941176470594,
-    "portfolio_value": 100.55295572279681
+    "total_return": 0.15655805281706137,
+    "total_trades": 173,
+    "wins": 90,
+    "win_rate": 52.02312138728323,
+    "portfolio_value": 100.15655805281706
   }
 }
