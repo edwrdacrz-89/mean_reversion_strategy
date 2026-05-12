@@ -2795,15 +2795,63 @@
           "score": 0.22941322375194526,
           "consistency": 0.5864661654135338
         }
+      ],
+      "returns": [
+        {
+          "ticker": "IBM",
+          "entry_price": 223.5500030517578,
+          "exit_price": 219.60000610351562,
+          "return_pct": -1.7669411291967898
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 426.3699951171875,
+          "exit_price": 430.5799865722656,
+          "return_pct": 0.9874033124495573
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 54.4900016784668,
+          "exit_price": 54.625,
+          "return_pct": 0.24774879312685244
+        }
+      ],
+      "daily_return": -0.17726300787346005,
+      "portfolio_return": -0.17726300787346005
+    },
+    {
+      "date": "2026-05-12",
+      "signals": [
+        {
+          "ticker": "IBM",
+          "price": 219.5800018310547,
+          "drop_pct": 1.7758895846599312,
+          "score": 0.10982388401235456,
+          "consistency": 0.5606060606060606
+        },
+        {
+          "ticker": "PWR",
+          "price": 768.5,
+          "drop_pct": 1.6483663265409743,
+          "score": 0.6154864171276803,
+          "consistency": 0.6349206349206349
+        },
+        {
+          "ticker": "GE",
+          "price": 297.8290100097656,
+          "drop_pct": 0.977816641065397,
+          "score": 0.09184870670008097,
+          "consistency": 0.578125
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.15655805281706137,
-    "total_trades": 173,
-    "wins": 90,
-    "win_rate": 52.02312138728323,
-    "portfolio_value": 100.15655805281706
+    "total_return": -0.020982474569890996,
+    "total_trades": 176,
+    "wins": 92,
+    "win_rate": 52.27272727272727,
+    "portfolio_value": 99.97901752543011
   }
 }
