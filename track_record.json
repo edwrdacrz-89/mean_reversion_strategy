@@ -2891,15 +2891,56 @@
           "score": 0.2686406536625592,
           "consistency": 0.6129032258064516
         }
+      ],
+      "returns": [
+        {
+          "ticker": "USB",
+          "entry_price": 52.7400016784668,
+          "exit_price": 53.46500015258789,
+          "return_pct": 1.374665246582848
+        },
+        {
+          "ticker": "PNC",
+          "entry_price": 209.86000061035156,
+          "exit_price": 213.79249572753906,
+          "return_pct": 1.873865960997965
+        },
+        {
+          "ticker": "C",
+          "entry_price": 124.0999984741211,
+          "exit_price": 124.93000030517578,
+          "return_pct": 0.6688169550846288
+        }
+      ],
+      "daily_return": 1.3057827208884805,
+      "portfolio_return": 1.3057827208884805
+    },
+    {
+      "date": "2026-05-14",
+      "signals": [
+        {
+          "ticker": "GE",
+          "price": 290.94500732421875,
+          "drop_pct": 1.2775217128779504,
+          "score": 0.07501018390139796,
+          "consistency": 0.5658914728682171
+        },
+        {
+          "ticker": "GD",
+          "price": 340.17498779296875,
+          "drop_pct": 0.34714014806783383,
+          "score": 0.0869271247385247,
+          "consistency": 0.55
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -0.4833977840214061,
-    "total_trades": 179,
-    "wins": 93,
-    "win_rate": 51.955307262569825,
-    "portfolio_value": 99.5166022159786
+    "total_return": 0.816072812130173,
+    "total_trades": 182,
+    "wins": 96,
+    "win_rate": 52.74725274725275,
+    "portfolio_value": 100.81607281213017
   }
 }
