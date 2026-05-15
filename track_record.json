@@ -2932,15 +2932,57 @@
           "score": 0.0869271247385247,
           "consistency": 0.55
         }
+      ],
+      "returns": [
+        {
+          "ticker": "GE",
+          "entry_price": 291.5400085449219,
+          "exit_price": 281.8399963378906,
+          "return_pct": -3.3271633130025875
+        },
+        {
+          "ticker": "GD",
+          "entry_price": 340.6199951171875,
+          "exit_price": 334.5799865722656,
+          "return_pct": -1.773239572399107
+        }
+      ],
+      "daily_return": -2.550201442700847,
+      "portfolio_return": -1.7001342951338982
+    },
+    {
+      "date": "2026-05-15",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 93.22000122070312,
+          "drop_pct": 2.5710692690493056,
+          "score": 0.21844722483422227,
+          "consistency": 0.5757575757575758
+        },
+        {
+          "ticker": "EME",
+          "price": 910.4000244140625,
+          "drop_pct": 2.1106850600999683,
+          "score": 0.4453121411057991,
+          "consistency": 0.6198347107438017
+        },
+        {
+          "ticker": "PWR",
+          "price": 769.4500122070312,
+          "drop_pct": 1.3626813467762777,
+          "score": 0.6248608980311459,
+          "consistency": 0.6377952755905512
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": 0.816072812130173,
-    "total_trades": 182,
+    "total_return": -0.8979358167560036,
+    "total_trades": 184,
     "wins": 96,
-    "win_rate": 52.74725274725275,
-    "portfolio_value": 100.81607281213017
+    "win_rate": 52.17391304347826,
+    "portfolio_value": 99.102064183244
   }
 }
