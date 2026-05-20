@@ -3070,15 +3070,63 @@
           "score": 0.2807695190963001,
           "consistency": 0.625
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EME",
+          "entry_price": 854.3599853515625,
+          "exit_price": 852.8350219726562,
+          "return_pct": -0.17849190096124873
+        },
+        {
+          "ticker": "C",
+          "entry_price": 119.97000122070312,
+          "exit_price": 124.87000274658203,
+          "return_pct": 4.08435565226394
+        },
+        {
+          "ticker": "MS",
+          "entry_price": 189.5800018310547,
+          "exit_price": 197.7899932861328,
+          "return_pct": 4.330621044299022
+        }
+      ],
+      "daily_return": 2.745494931867238,
+      "portfolio_return": 2.745494931867238
+    },
+    {
+      "date": "2026-05-20",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 88.41999816894531,
+          "drop_pct": 1.8210075883928831,
+          "score": 0.21406875605953454,
+          "consistency": 0.5833333333333334
+        },
+        {
+          "ticker": "HCA",
+          "price": 398.0799865722656,
+          "drop_pct": 1.633352894626466,
+          "score": 0.15919478752339106,
+          "consistency": 0.5736434108527132
+        },
+        {
+          "ticker": "ALL",
+          "price": 221.85000610351562,
+          "drop_pct": 1.2156005455876533,
+          "score": 0.08796650521325759,
+          "consistency": 0.5777777777777777
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -6.707130493519472,
-    "total_trades": 190,
-    "wins": 97,
-    "win_rate": 51.05263157894737,
-    "portfolio_value": 93.29286950648053
+    "total_return": -4.1457794894255215,
+    "total_trades": 193,
+    "wins": 99,
+    "win_rate": 51.29533678756477,
+    "portfolio_value": 95.85422051057448
   }
 }
