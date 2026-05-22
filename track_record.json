@@ -3166,15 +3166,63 @@
           "score": 0.14538889343211614,
           "consistency": 0.6046511627906976
         }
+      ],
+      "returns": [
+        {
+          "ticker": "ALL",
+          "entry_price": 214.44000244140625,
+          "exit_price": 216.7899932861328,
+          "return_pct": 1.0958733529061004
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 392.55999755859375,
+          "exit_price": 394.25,
+          "return_pct": 0.43050806295004607
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 255.6999969482422,
+          "exit_price": 254.84750366210938,
+          "return_pct": -0.33339589218116844
+        }
+      ],
+      "daily_return": 0.39766184122499276,
+      "portfolio_return": 0.39766184122499276
+    },
+    {
+      "date": "2026-05-22",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 88.69000244140625,
+          "drop_pct": 1.1149514692602356,
+          "score": 0.21807418960908315,
+          "consistency": 0.5833333333333334
+        },
+        {
+          "ticker": "AIZ",
+          "price": 254.84750366210938,
+          "drop_pct": 0.33339589218116844,
+          "score": 0.1589467891080434,
+          "consistency": 0.6046511627906976
+        },
+        {
+          "ticker": "MET",
+          "price": 84.05000305175781,
+          "drop_pct": 0.29655989436501806,
+          "score": 0.19153280965085556,
+          "consistency": 0.6102941176470589
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -5.152153104281098,
-    "total_trades": 196,
-    "wins": 100,
-    "win_rate": 51.02040816326531,
-    "portfolio_value": 94.8478468957189
+    "total_return": -4.774979409953332,
+    "total_trades": 199,
+    "wins": 102,
+    "win_rate": 51.256281407035175,
+    "portfolio_value": 95.22502059004667
   }
 }
