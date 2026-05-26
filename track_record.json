@@ -3214,15 +3214,63 @@
           "score": 0.19153280965085556,
           "consistency": 0.6102941176470589
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NEE",
+          "entry_price": 88.55000305175781,
+          "exit_price": 87.93499755859375,
+          "return_pct": -0.6945290479601559
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 254.82000732421875,
+          "exit_price": 255.52999877929688,
+          "return_pct": 0.2786246898481451
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 84.05999755859375,
+          "exit_price": 83.34989929199219,
+          "return_pct": -0.8447517097613414
+        }
+      ],
+      "daily_return": -0.42021868929111744,
+      "portfolio_return": -0.42021868929111744
+    },
+    {
+      "date": "2026-05-26",
+      "signals": [
+        {
+          "ticker": "PRU",
+          "price": 102.63500213623047,
+          "drop_pct": 1.4262395036292015,
+          "score": 0.12925422241878398,
+          "consistency": 0.5895522388059702
+        },
+        {
+          "ticker": "AFL",
+          "price": 116.83499908447266,
+          "drop_pct": 0.869677176795196,
+          "score": 0.11626324238980937,
+          "consistency": 0.5714285714285714
+        },
+        {
+          "ticker": "MET",
+          "price": 83.34989929199219,
+          "drop_pct": 0.8447517097613414,
+          "score": 0.17590136337324208,
+          "consistency": 0.6029411764705882
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -4.774979409953332,
-    "total_trades": 199,
-    "wins": 102,
-    "win_rate": 51.256281407035175,
-    "portfolio_value": 95.22502059004667
+    "total_return": -5.175132743354027,
+    "total_trades": 202,
+    "wins": 103,
+    "win_rate": 50.99009900990099,
+    "portfolio_value": 94.82486725664597
   }
 }
