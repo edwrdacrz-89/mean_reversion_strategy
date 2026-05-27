@@ -3262,15 +3262,63 @@
           "score": 0.17590136337324208,
           "consistency": 0.6029411764705882
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PRU",
+          "entry_price": 102.62000274658203,
+          "exit_price": 101.30999755859375,
+          "return_pct": -1.276559299285259
+        },
+        {
+          "ticker": "AFL",
+          "entry_price": 116.81999969482422,
+          "exit_price": 114.4000015258789,
+          "return_pct": -2.071561526508489
+        },
+        {
+          "ticker": "MET",
+          "entry_price": 83.2699966430664,
+          "exit_price": 83.12000274658203,
+          "return_pct": -0.18012958151940126
+        }
+      ],
+      "daily_return": -1.1760834691043829,
+      "portfolio_return": -1.1760834691043829
+    },
+    {
+      "date": "2026-05-27",
+      "signals": [
+        {
+          "ticker": "AIZ",
+          "price": 251.81939697265625,
+          "drop_pct": 1.6368941186343535,
+          "score": 0.15208945077656938,
+          "consistency": 0.6046511627906976
+        },
+        {
+          "ticker": "C",
+          "price": 124.98999786376953,
+          "drop_pct": 1.4740680573742977,
+          "score": 0.2727047447237039,
+          "consistency": 0.609375
+        },
+        {
+          "ticker": "PWR",
+          "price": 732.5399780273438,
+          "drop_pct": 1.2988782699035524,
+          "score": 0.5638713602845481,
+          "consistency": 0.625
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -5.175132743354027,
-    "total_trades": 202,
+    "total_return": -6.290352331759621,
+    "total_trades": 205,
     "wins": 103,
-    "win_rate": 50.99009900990099,
-    "portfolio_value": 94.82486725664597
+    "win_rate": 50.24390243902439,
+    "portfolio_value": 93.70964766824038
   }
 }
