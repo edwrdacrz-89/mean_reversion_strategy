@@ -3358,15 +3358,63 @@
           "score": 0.22023002949129797,
           "consistency": 0.5801526717557252
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EME",
+          "entry_price": 848.4500122070312,
+          "exit_price": 823.510009765625,
+          "return_pct": -2.9394781168699673
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 54.45000076293945,
+          "exit_price": 54.70899963378906,
+          "return_pct": 0.47566366799005244
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 87.25,
+          "exit_price": 86.6500015258789,
+          "return_pct": -0.6876773342362106
+        }
+      ],
+      "daily_return": -1.0504972610387084,
+      "portfolio_return": -1.0504972610387084
+    },
+    {
+      "date": "2026-05-29",
+      "signals": [
+        {
+          "ticker": "EME",
+          "price": 823.510009765625,
+          "drop_pct": 2.9394781168699673,
+          "score": 0.40664665729478106,
+          "consistency": 0.5967741935483871
+        },
+        {
+          "ticker": "PWR",
+          "price": 710.1099853515625,
+          "drop_pct": 2.737979852462281,
+          "score": 0.5761315313403059,
+          "consistency": 0.625
+        },
+        {
+          "ticker": "HCA",
+          "price": 379.5799865722656,
+          "drop_pct": 1.251340537701303,
+          "score": 0.12867520015207842,
+          "consistency": 0.5606060606060606
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -6.992950130556167,
-    "total_trades": 208,
-    "wins": 103,
-    "win_rate": 49.519230769230774,
-    "portfolio_value": 93.00704986944383
+    "total_return": -7.9699866420075836,
+    "total_trades": 211,
+    "wins": 104,
+    "win_rate": 49.28909952606635,
+    "portfolio_value": 92.03001335799242
   }
 }
