@@ -3406,15 +3406,63 @@
           "score": 0.12867520015207842,
           "consistency": 0.5606060606060606
         }
+      ],
+      "returns": [
+        {
+          "ticker": "EME",
+          "entry_price": 826.8200073242188,
+          "exit_price": 830.530029296875,
+          "return_pct": 0.4487097481666828
+        },
+        {
+          "ticker": "PWR",
+          "entry_price": 711.72998046875,
+          "exit_price": 689.2249755859375,
+          "return_pct": -3.1620144577850375
+        },
+        {
+          "ticker": "HCA",
+          "entry_price": 378.5400085449219,
+          "exit_price": 372.0950012207031,
+          "return_pct": -1.7025960740564394
+        }
+      ],
+      "daily_return": -1.471966927891598,
+      "portfolio_return": -1.471966927891598
+    },
+    {
+      "date": "2026-06-01",
+      "signals": [
+        {
+          "ticker": "NEE",
+          "price": 83.76499938964844,
+          "drop_pct": 3.7294594493876363,
+          "score": 0.2153463772680972,
+          "consistency": 0.5714285714285714
+        },
+        {
+          "ticker": "PWR",
+          "price": 688.9000244140625,
+          "drop_pct": 3.2076709821401006,
+          "score": 0.5489237173758563,
+          "consistency": 0.6220472440944882
+        },
+        {
+          "ticker": "USB",
+          "price": 53.48500061035156,
+          "drop_pct": 2.4886014617002297,
+          "score": 0.2173751406491402,
+          "consistency": 0.5746268656716418
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -7.9699866420075836,
-    "total_trades": 211,
-    "wins": 104,
-    "win_rate": 49.28909952606635,
-    "portfolio_value": 92.03001335799242
+    "total_return": -9.324638002371458,
+    "total_trades": 214,
+    "wins": 105,
+    "win_rate": 49.06542056074766,
+    "portfolio_value": 90.67536199762854
   }
 }
