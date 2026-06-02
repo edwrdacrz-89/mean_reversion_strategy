@@ -3454,15 +3454,63 @@
           "score": 0.2173751406491402,
           "consistency": 0.5746268656716418
         }
+      ],
+      "returns": [
+        {
+          "ticker": "NEE",
+          "entry_price": 83.66000366210938,
+          "exit_price": 85.58999633789062,
+          "return_pct": 2.306947873892297
+        },
+        {
+          "ticker": "PWR",
+          "entry_price": 687.47998046875,
+          "exit_price": 707.2449951171875,
+          "return_pct": 2.8749949394833227
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 53.54999923706055,
+          "exit_price": 54.685001373291016,
+          "return_pct": 2.1195184918788263
+        }
+      ],
+      "daily_return": 2.433820435084815,
+      "portfolio_return": 2.433820435084815
+    },
+    {
+      "date": "2026-06-02",
+      "signals": [
+        {
+          "ticker": "CNC",
+          "price": 59.79999923706055,
+          "drop_pct": 3.5483883273216983,
+          "score": 0.0020065218280770373,
+          "consistency": 0.5514705882352942
+        },
+        {
+          "ticker": "GE",
+          "price": 317.4549865722656,
+          "drop_pct": 2.2011766472276153,
+          "score": 0.07963030494473625,
+          "consistency": 0.5634920634920635
+        },
+        {
+          "ticker": "EME",
+          "price": 828.6300048828125,
+          "drop_pct": 0.2791993850576802,
+          "score": 0.3900774910109146,
+          "consistency": 0.6016260162601627
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -9.324638002371458,
-    "total_trades": 214,
-    "wins": 105,
-    "win_rate": 49.06542056074766,
-    "portfolio_value": 90.67536199762854
+    "total_return": -7.117762512486038,
+    "total_trades": 217,
+    "wins": 108,
+    "win_rate": 49.76958525345622,
+    "portfolio_value": 92.88223748751396
   }
 }
