@@ -3550,15 +3550,56 @@
           "score": 0.24208823244770092,
           "consistency": 0.6
         }
+      ],
+      "returns": [
+        {
+          "ticker": "USB",
+          "entry_price": 53.13999938964844,
+          "exit_price": 55.369998931884766,
+          "return_pct": 4.196461362155619
+        },
+        {
+          "ticker": "MS",
+          "entry_price": 210.13999938964844,
+          "exit_price": 218.52999877929688,
+          "return_pct": 3.9925760987994616
+        },
+        {
+          "ticker": "GS",
+          "entry_price": 1041.02001953125,
+          "exit_price": 1094.719970703125,
+          "return_pct": 5.158397548978452
+        }
+      ],
+      "daily_return": 4.449145003311178,
+      "portfolio_return": 4.449145003311178
+    },
+    {
+      "date": "2026-06-04",
+      "signals": [
+        {
+          "ticker": "IBM",
+          "price": 302.4100036621094,
+          "drop_pct": 1.0535618785000405,
+          "score": 0.1007271900457367,
+          "consistency": 0.5538461538461539
+        },
+        {
+          "ticker": "BK",
+          "price": 140.57000732421875,
+          "drop_pct": 0.5025420874948131,
+          "score": 0.2026046704198612,
+          "consistency": 0.6548672566371682
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -7.030839430351733,
-    "total_trades": 220,
-    "wins": 109,
-    "win_rate": 49.54545454545455,
-    "portfolio_value": 92.96916056964827
+    "total_return": -2.8945066682468905,
+    "total_trades": 223,
+    "wins": 112,
+    "win_rate": 50.224215246636774,
+    "portfolio_value": 97.10549333175311
   }
 }
