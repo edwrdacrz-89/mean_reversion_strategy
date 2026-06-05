@@ -3591,15 +3591,57 @@
           "score": 0.2026046704198612,
           "consistency": 0.6548672566371682
         }
+      ],
+      "returns": [
+        {
+          "ticker": "IBM",
+          "entry_price": 301.7699890136719,
+          "exit_price": 283.2300109863281,
+          "return_pct": -6.143744806414062
+        },
+        {
+          "ticker": "BK",
+          "entry_price": 144.02000427246094,
+          "exit_price": NaN,
+          "return_pct": NaN
+        }
+      ],
+      "daily_return": NaN,
+      "portfolio_return": NaN
+    },
+    {
+      "date": "2026-06-05",
+      "signals": [
+        {
+          "ticker": "GS",
+          "price": 1041.0899658203125,
+          "drop_pct": 4.715316555950449,
+          "score": 0.323695236309888,
+          "consistency": 0.6083333333333333
+        },
+        {
+          "ticker": "EME",
+          "price": 818.9299926757812,
+          "drop_pct": 3.1344996309070665,
+          "score": 0.42591740597501054,
+          "consistency": 0.6097560975609756
+        },
+        {
+          "ticker": "MS",
+          "price": 211.6300048828125,
+          "drop_pct": 3.042103477196021,
+          "score": 0.3830218662658965,
+          "consistency": 0.6410256410256411
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
-    "total_return": -2.8945066682468905,
-    "total_trades": 223,
+    "total_return": NaN,
+    "total_trades": 225,
     "wins": 112,
-    "win_rate": 50.224215246636774,
-    "portfolio_value": 97.10549333175311
+    "win_rate": 49.77777777777778,
+    "portfolio_value": NaN
   }
 }
