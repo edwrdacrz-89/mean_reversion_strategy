@@ -3633,15 +3633,63 @@
           "score": 0.3830218662658965,
           "consistency": 0.6410256410256411
         }
+      ],
+      "returns": [
+        {
+          "ticker": "GS",
+          "entry_price": 1038.6800537109375,
+          "exit_price": 1044.4300537109375,
+          "return_pct": 0.5535872167234487
+        },
+        {
+          "ticker": "EME",
+          "entry_price": 817.4400024414062,
+          "exit_price": 823.3400268554688,
+          "return_pct": 0.7217684963350459
+        },
+        {
+          "ticker": "MS",
+          "entry_price": 211.92999267578125,
+          "exit_price": 211.89999389648438,
+          "return_pct": -0.014155041916491876
+        }
+      ],
+      "daily_return": 0.42040022371400093,
+      "portfolio_return": 0.42040022371400093
+    },
+    {
+      "date": "2026-06-08",
+      "signals": [
+        {
+          "ticker": "ES",
+          "price": 68.18000030517578,
+          "drop_pct": 3.4277595201823967,
+          "score": 0.24027772740069037,
+          "consistency": 0.624
+        },
+        {
+          "ticker": "AIZ",
+          "price": 253.48500061035156,
+          "drop_pct": 1.5018478342718264,
+          "score": 0.2551006865066343,
+          "consistency": 0.6171875
+        },
+        {
+          "ticker": "BK",
+          "price": 142.38999938964844,
+          "drop_pct": 1.131790608566302,
+          "score": 0.26817025008691164,
+          "consistency": 0.6607142857142857
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 225,
-    "wins": 112,
-    "win_rate": 49.77777777777778,
+    "total_trades": 228,
+    "wins": 114,
+    "win_rate": 50.0,
     "portfolio_value": NaN
   }
 }
