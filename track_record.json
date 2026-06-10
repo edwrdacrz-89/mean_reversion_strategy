@@ -3729,15 +3729,63 @@
           "score": 0.5551458253851935,
           "consistency": 0.6171875
         }
+      ],
+      "returns": [
+        {
+          "ticker": "GS",
+          "entry_price": 1032.010009765625,
+          "exit_price": 1005.6799926757812,
+          "return_pct": -2.551333498773276
+        },
+        {
+          "ticker": "MS",
+          "entry_price": 210.25,
+          "exit_price": 207.25999450683594,
+          "return_pct": -1.422119140625
+        },
+        {
+          "ticker": "PWR",
+          "entry_price": 691.9500122070312,
+          "exit_price": 653.4299926757812,
+          "return_pct": -5.566878943810875
+        }
+      ],
+      "daily_return": -3.1801105277363835,
+      "portfolio_return": -3.1801105277363835
+    },
+    {
+      "date": "2026-06-10",
+      "signals": [
+        {
+          "ticker": "EME",
+          "price": 778.0,
+          "drop_pct": 6.013678457447043,
+          "score": 0.4155715054371824,
+          "consistency": 0.6097560975609756
+        },
+        {
+          "ticker": "PWR",
+          "price": 653.4299926757812,
+          "drop_pct": 5.566878943810875,
+          "score": 0.48543567253284037,
+          "consistency": 0.609375
+        },
+        {
+          "ticker": "GS",
+          "price": 1005.6799926757812,
+          "drop_pct": 2.551333498773276,
+          "score": 0.2688591480752993,
+          "consistency": 0.6134453781512605
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 231,
+    "total_trades": 234,
     "wins": 115,
-    "win_rate": 49.78354978354979,
+    "win_rate": 49.14529914529914,
     "portfolio_value": NaN
   }
 }
