@@ -1,29 +1,7 @@
 {
-  "date": "2026-06-11",
-  "generated_at": "2026-06-11 19:48:40 UTC",
-  "signals": [
-    {
-      "ticker": "BK",
-      "price": 139.75,
-      "drop_pct": 2.4432809773123907,
-      "score": 0.21765904712511977,
-      "consistency": 0.6548672566371682
-    },
-    {
-      "ticker": "ALL",
-      "price": 220.08999633789062,
-      "drop_pct": 1.4551804662354708,
-      "score": 0.11435416257509463,
-      "consistency": 0.5735294117647058
-    },
-    {
-      "ticker": "ES",
-      "price": 68.8949966430664,
-      "drop_pct": 0.4119740688813673,
-      "score": 0.2268653279504314,
-      "consistency": 0.6190476190476191
-    }
-  ],
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12 19:49:53 UTC",
+  "signals": [],
   "allocation_per_position": 33.333333333333336,
-  "cash_allocation": 0.0
+  "cash_allocation": 100.0
 }

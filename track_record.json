@@ -3825,15 +3825,41 @@
           "score": 0.2268653279504314,
           "consistency": 0.6190476190476191
         }
-      ]
+      ],
+      "returns": [
+        {
+          "ticker": "BK",
+          "entry_price": 142.08999633789062,
+          "exit_price": NaN,
+          "return_pct": NaN
+        },
+        {
+          "ticker": "ALL",
+          "entry_price": 219.57000732421875,
+          "exit_price": 221.39500427246094,
+          "return_pct": 0.8311685965139051
+        },
+        {
+          "ticker": "ES",
+          "entry_price": 68.43000030517578,
+          "exit_price": 68.48999786376953,
+          "return_pct": 0.08767727360248458
+        }
+      ],
+      "daily_return": NaN,
+      "portfolio_return": NaN
+    },
+    {
+      "date": "2026-06-12",
+      "signals": []
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 237,
-    "wins": 118,
-    "win_rate": 49.789029535864984,
+    "total_trades": 240,
+    "wins": 120,
+    "win_rate": 50.0,
     "portfolio_value": NaN
   }
 }
