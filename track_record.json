@@ -3880,15 +3880,63 @@
           "score": 0.20560808123939825,
           "consistency": 0.6141732283464567
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PNC",
+          "entry_price": 230.55999755859375,
+          "exit_price": 233.8000030517578,
+          "return_pct": 1.4052765126095468
+        },
+        {
+          "ticker": "USB",
+          "entry_price": 57.790000915527344,
+          "exit_price": 58.720001220703125,
+          "return_pct": 1.609275463648424
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 259.4599914550781,
+          "exit_price": 260.5950012207031,
+          "return_pct": 0.4374507835523116
+        }
+      ],
+      "daily_return": 1.1506675866034275,
+      "portfolio_return": 1.1506675866034275
+    },
+    {
+      "date": "2026-06-16",
+      "signals": [
+        {
+          "ticker": "MET",
+          "price": 87.01000213623047,
+          "drop_pct": 0.7415029645496882,
+          "score": 0.20562679413499427,
+          "consistency": 0.5955882352941176
+        },
+        {
+          "ticker": "XEL",
+          "price": 78.79499816894531,
+          "drop_pct": 0.6994332902939966,
+          "score": 0.07340922990130928,
+          "consistency": 0.5648854961832062
+        },
+        {
+          "ticker": "PWR",
+          "price": 720.9000244140625,
+          "drop_pct": 0.4762823618630322,
+          "score": 0.4636699113158686,
+          "consistency": 0.609375
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 240,
-    "wins": 120,
-    "win_rate": 50.0,
+    "total_trades": 243,
+    "wins": 123,
+    "win_rate": 50.617283950617285,
     "portfolio_value": NaN
   }
 }
