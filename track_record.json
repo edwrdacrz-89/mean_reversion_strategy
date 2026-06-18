@@ -3976,15 +3976,63 @@
           "score": 0.22408225049177619,
           "consistency": 0.5923076923076923
         }
+      ],
+      "returns": [
+        {
+          "ticker": "USB",
+          "entry_price": 57.90999984741211,
+          "exit_price": 57.84000015258789,
+          "return_pct": -0.12087669661312718
+        },
+        {
+          "ticker": "PNC",
+          "entry_price": 233.1300048828125,
+          "exit_price": 232.32000732421875,
+          "return_pct": -0.34744457668626205
+        },
+        {
+          "ticker": "NEE",
+          "entry_price": 85.7300033569336,
+          "exit_price": 86.54000091552734,
+          "return_pct": 0.944823896974967
+        }
+      ],
+      "daily_return": 0.15883420789185929,
+      "portfolio_return": 0.15883420789185929
+    },
+    {
+      "date": "2026-06-18",
+      "signals": [
+        {
+          "ticker": "PWR",
+          "price": 706.8800048828125,
+          "drop_pct": 1.1149151535736284,
+          "score": 0.47294192374098865,
+          "consistency": 0.609375
+        },
+        {
+          "ticker": "AIZ",
+          "price": 259.4150085449219,
+          "drop_pct": 1.0357442060493562,
+          "score": 0.22823670852557307,
+          "consistency": 0.626984126984127
+        },
+        {
+          "ticker": "MS",
+          "price": 223.3800048828125,
+          "drop_pct": 0.7023478769114437,
+          "score": 0.28934534977141124,
+          "consistency": 0.6293103448275862
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 246,
-    "wins": 123,
-    "win_rate": 50.0,
+    "total_trades": 249,
+    "wins": 124,
+    "win_rate": 49.79919678714859,
     "portfolio_value": NaN
   }
 }
