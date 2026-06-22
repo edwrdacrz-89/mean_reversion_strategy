@@ -4024,15 +4024,63 @@
           "score": 0.28934534977141124,
           "consistency": 0.6293103448275862
         }
+      ],
+      "returns": [
+        {
+          "ticker": "PWR",
+          "entry_price": 702.25,
+          "exit_price": 738.1300048828125,
+          "return_pct": 5.109292258143467
+        },
+        {
+          "ticker": "AIZ",
+          "entry_price": 259.8599853515625,
+          "exit_price": 261.75,
+          "return_pct": 0.7273203859688187
+        },
+        {
+          "ticker": "MS",
+          "entry_price": 223.1699981689453,
+          "exit_price": 227.35000610351562,
+          "return_pct": 1.8730151762630483
+        }
+      ],
+      "daily_return": 2.5698759401251112,
+      "portfolio_return": 2.5698759401251112
+    },
+    {
+      "date": "2026-06-22",
+      "signals": [
+        {
+          "ticker": "BK",
+          "price": 143.6300048828125,
+          "drop_pct": 1.6704335723009798,
+          "score": 0.1991510539572559,
+          "consistency": 0.6486486486486487
+        },
+        {
+          "ticker": "GD",
+          "price": 344.4100036621094,
+          "drop_pct": 1.5999559861918013,
+          "score": 0.14986310440801937,
+          "consistency": 0.5555555555555556
+        },
+        {
+          "ticker": "NEE",
+          "price": 86.12000274658203,
+          "drop_pct": 0.7262216177728746,
+          "score": 0.20602978783141318,
+          "consistency": 0.5891472868217055
+        }
       ]
     }
   ],
   "start_date": "2026-02-17",
   "performance": {
     "total_return": NaN,
-    "total_trades": 249,
-    "wins": 124,
-    "win_rate": 49.79919678714859,
+    "total_trades": 252,
+    "wins": 127,
+    "win_rate": 50.39682539682539,
     "portfolio_value": NaN
   }
 }
